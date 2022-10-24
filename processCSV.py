@@ -1,6 +1,6 @@
 import csv
 import json
-filepath = "C:/Users/Alexc/Downloads/Nutrition Calculator Cal Poly Campus Dining.csv"
+filepath = "Nutrition Calculator - Cal Poly Campus Dining.csv"
 reader = csv.DictReader(open(filepath))
 keysToDrop = [
     'Soy Free',

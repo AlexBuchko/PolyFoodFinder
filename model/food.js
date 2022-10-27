@@ -7,9 +7,14 @@ const foodSchema = new mongoose.Schema(
             required: true,
             trim: true,
         },
-        restaurant: {
+        restaurant_id: {
             //add ref: "Restaurant" once restauarants are set up
             type: [{ type: mongoose.Schema.Types.ObjectId }],
+        },
+        restaurant: {
+            type: String,
+            required: true,
+            trim: true,
         },
         nutrition: {
             sugar: {

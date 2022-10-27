@@ -27,6 +27,11 @@ nutritionKeys = [
     "Protein"
 ]
 
+boolKeys = [
+    "Vegan",
+    "Vegetarian"
+]
+
 data = []
 for row in reader:
     #removing unused keys
@@ -34,14 +39,21 @@ for row in reader:
         del row[key]
     
     #changing ingredients str to a list of ingredients
-    nutritionInfo = {key: int(row[key] if row[key] else 0) for key in nutritionKeys}
+    nutritionInfo = {key.lower(): int(row[key] if row[key] else 0) for key in nutritionKeys}
     for key in nutritionKeys:
         del row[key]
-    row["nutritionInfo"] = nutritionInfo
+    #changing from either 'TRUE" string or none to bool value
+    for key in boolKeys:
+        row[key] = True if row[key] else False
+    row["nutrition"] = nutritionInfo
     row["likes"] = 0
     row["dislikes"] = 0
     row["poisonings"] = 0
-    data.append(row)
+
+    newRow = {}
+    for key in row:
+        newRow[key.lower()] = row[key] if row[key] else False
+    data.append(newRow)
 
 f = open("./nutrition.json", "w")
 dumpedJson = json.dumps(data, indent=4)

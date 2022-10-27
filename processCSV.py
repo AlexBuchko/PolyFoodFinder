@@ -34,14 +34,18 @@ for row in reader:
         del row[key]
     
     #changing ingredients str to a list of ingredients
-    nutritionInfo = {key: int(row[key] if row[key] else 0) for key in nutritionKeys}
+    nutritionInfo = {key.lower(): int(row[key] if row[key] else 0) for key in nutritionKeys}
     for key in nutritionKeys:
         del row[key]
-    row["nutritionInfo"] = nutritionInfo
+    row["nutrition"] = nutritionInfo
     row["likes"] = 0
     row["dislikes"] = 0
     row["poisonings"] = 0
-    data.append(row)
+
+    newRow = {}
+    for key in row:
+        newRow[key.lower()] = row[key] if row[key] else 0
+    data.append(newRow)
 
 f = open("./nutrition.json", "w")
 dumpedJson = json.dumps(data, indent=4)

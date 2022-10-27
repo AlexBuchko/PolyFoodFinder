@@ -12,10 +12,29 @@ function getDbConnection() {
     return dbConnection;
 }
 
-export const getFoods = async () => {
-    /*gets all foods from DB*/
-    /*returns a promise, so you need to .then() it get the results*/
-    /*EX: getFoods().then((r) => console.log(r));*/
+async function getFoods(foodName, restName) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find();
-};
+    let result;
+    if (foodName === undefined && restName === undefined) {      // no food or restaurant specified
+        result = await foodsModel.find()
+    }
+    else if (foodName && !restName) {
+        result = await findFoodByName(foodName);
+    }
+    // else if (!foodName && restName) {
+    //     result = await findFoodByRest(restName);
+    // }
+    return result;
+}
+
+async function findFoodByName(fname) {
+    const foodsModel = getDbConnection().model("foods", foodSchema);
+    return await foodsModel.find({'name':fname});
+}
+
+async function findFoodByRest(rname) {
+    const foodsModel = getDbConnection().model("foods", foodSchema);
+    return await foodsModel.find({'restaurants':rname});
+}
+
+exports.getFoods = getFoods;

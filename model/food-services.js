@@ -21,9 +21,9 @@ async function getFoods(foodName, restName) {
     else if (foodName && !restName) {
         result = await findFoodByName(foodName);
     }
-    // else if (!foodName && restName) {
-    //     result = await findFoodByRest(restName);
-    // }
+    else if (!foodName && restName) {
+        result = await findFoodByRest(restName);
+    }
     return result;
 }
 
@@ -34,7 +34,7 @@ async function findFoodByName(fname) {
 
 async function findFoodByRest(rname) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({'restaurants':rname});
+    return await foodsModel.find({'restaurant':rname});
 }
 
 exports.getFoods = getFoods;

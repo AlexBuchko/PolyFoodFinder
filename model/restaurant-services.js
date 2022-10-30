@@ -21,11 +21,11 @@ async function getRestaurants(restName) {
     return result;
 }
 
-async function findRestaurantById(id){
-    const restaurantsModel = getDbConnection().model("restaurants", restaurantSchema);    
-    try{
+async function findRestaurantById(id) {
+    const restaurantsModel = getDbConnection().model("restaurants", restaurantSchema);
+    try {
         return await restaurantsModel.findById(id);
-    }catch(error) {
+    } catch (error) {
         console.log(error);
         return undefined;
     }

@@ -42,12 +42,11 @@ const restaurantSchema = new mongoose.Schema(
                 required: true,
             },
         },
-        foodId: [ {
-            type: String,
-            required: true,
-        } ]
+        foodId: {
+            type: [{ type: mongoose.Schema.Types.ObjectId }],
+        },
     },
-    { collection: "restaurant" }
+    { collection: "restaurants" }
 );
 
 module.exports = restaurantSchema;

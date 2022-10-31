@@ -18,7 +18,15 @@ async function getRestaurants(restName) {
     if (restName === undefined) {      // no restaurant specified
         result = await restaurantsModel.find()
     }
+    else {
+        result = await findRestByName(restName);
+    }
     return result;
+}
+
+async function findRestByName(rname) {
+    const restaurantsModel = getDbConnection().model("restaurants", restaurantSchema);
+    return await restaurantsModel.find({ 'name': rname });
 }
 
 async function findRestaurantById(id) {

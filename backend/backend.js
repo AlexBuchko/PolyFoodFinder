@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const foodServices = require('../model/food-services');
-// const restaurantServices = require('../model/restaurant-services');
+const restaurantServices = require('../model/restaurant-services');
 
 const app = express();
 const port = 4000;

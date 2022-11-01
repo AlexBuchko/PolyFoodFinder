@@ -37,4 +37,15 @@ async function findFoodByRest(rname) {
     return await foodsModel.find({'restaurant':rname});
 }
 
+async function findFoodById(id){
+    const foodsModel = getDbConnection().model("foods", foodSchema);    
+    try{
+        return await foodsModel.findById(id);
+    }catch(error) {
+        console.log(error);
+        return undefined;
+    }
+}
+
 exports.getFoods = getFoods;
+exports.findFoodById = findFoodById;

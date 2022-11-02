@@ -15,22 +15,25 @@ function TableHeader() {
 
 function TableBody (props) {
   console.log("props");
-  console.log(props.characterData);
-  const rows = props.characterData.map((row, index) => {
-    var priceStr = "$" + row.price;
-    if(priceStr.length == 3){
-      priceStr = priceStr + ".00";
+  console.log(props.foodsData.foods);
+  if(!props.foodsData.foods){
+    return
+  }
+  const rows = props.foodsData.foods.map((row, index) => {
+    var priceStr = row.price;
+    if(!priceStr){
+      priceStr = "No Price Given"
     }
     else{
-      priceStr = priceStr + "0";
+      priceStr = "$" + priceStr
     }
     return (
       <tr key={index}>
-        <td>{row.itemName}</td>
-        <td>{row.resturant}</td>
+        <td>{row.name}</td>
+        <td>{row.restaurant}</td>
 	      <td>{priceStr}</td>
         <td>
-        <button onClick={() => props.removeCharacter(index)}>More Info</button>
+        <button>More Info</button>
         </td>
       </tr>
     );
@@ -46,7 +49,7 @@ function Table(props) {
   return (
     <table>
       <TableHeader />
-      <TableBody characterData={props.characterData} removeCharacter={props.removeCharacter} />
+      <TableBody foodsData={props.foodsData} />
     </table>
   );
 }

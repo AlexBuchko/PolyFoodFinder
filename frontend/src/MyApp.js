@@ -1,54 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import Table from './Table';
-import Form from './Form';
 import axios from 'axios';
 
 function MyApp() { 
-  const [characters, setCharacters] = useState([]);
+  const [foodsData, setFoodsData] = useState([]);
 
   useEffect(() => {
     getData().then( result => {
       if (result)
-        setCharacters(result);
+        setFoodsData(result);
     });
   }, [] );
-  
-
-  async function makePostCall(person){
-    try {
-      const response = await axios.post('http://localhost:5000/foods', person);
-      return response;
-    }
-    catch (error) {
-      console.log(error);
-      return false;
-    }
-  }
-
- async function makeDeleteCall(id){
-   try {
-     const url = "http://localhost:5000/users/" + id
-     const response = await axios.delete(url);
-     return response;
-   }
-  catch (error) {
-     console.log(error);
-     return false;
-   }
- }
-
-  function updateList(person) { 
-    makePostCall(person).then( result => {
-    if (result && result.status === 201)
-      setCharacters([...characters, result.data]);
-    });
-  }
 
   async function getData(){
     console.log("aaaa");
     makeRequest().then( result => {
     if (result && result.status === 201)
-      setCharacters([...characters, result.data]);
+      setFoodsData([...foodsData, result.data]);
     });
   }
 
@@ -63,7 +31,7 @@ function MyApp() {
       const response = await axios.get('http://localhost:5000/foods', { params: request});
       console.log("response");
       console.log(response.data);
-      setCharacters(response.data)    
+      setFoodsData(response.data)    
     }
     catch (error){
       //We're not handling errors. Just logging into the console.
@@ -71,29 +39,6 @@ function MyApp() {
       return false;         
     }  
 }
-
-//  async function fetchAll(){
-//    try {
-//      const response = await axios.get('http://localhost:5000/users');
-//      return response.data.users_list;     
-//    }
-//    catch (error){
-//      //We're not handling errors. Just logging into the console.
-//      console.log(error); 
-//      return false;         
-//    }
-//  }
-
-  function removeOneCharacter (index) {
-    const updated = characters.filter((character, i) => {
-      return i !== index
-    });
-    const removed = characters[index];
-    makeDeleteCall(removed.id.toString()).then( result => {
-      if (result && result.status === 204)
-        setCharacters(updated);
-    });
-  }
 
   return (
     <div className="container">
@@ -142,7 +87,7 @@ function MyApp() {
   	    </tr>
 	  </table>
 	</div>
-        <Table characterData={characters} removeCharacter={removeOneCharacter} />
+        <Table foodsData={foodsData} />
       </div>
     </div>
   );

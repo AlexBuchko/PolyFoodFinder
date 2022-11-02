@@ -12,11 +12,12 @@ function getDbConnection() {
     return dbConnection;
 }
 
-async function getFoods(diet, price, location){
+async function getFoodsByFilters(diet, price, location){
+    const foodsModel = getDbConnection().model("foods", foodSchema);
     let result;
     searchParams = []
     if(diet === "None" && price === "Any" && location === "Any"){
-        result = await foodsModel.find();
+        return await foodsModel.find();
     }
     else{
         if(diet === "Vegan"){
@@ -47,6 +48,7 @@ async function getFoods(diet, price, location){
             searchParams.append({'price': {$gte:0}})
         }
     }
+    console.log(searchParams);
     //add location stuff here later
     result = await foodsModel.find({$and: searchParams});
     return result;
@@ -79,3 +81,4 @@ async function findFoodByRest(rname) {
 }
 
 exports.getFoods = getFoods;
+exports.getFoodsByFilters = getFoodsByFilters;

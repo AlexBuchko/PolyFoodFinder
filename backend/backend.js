@@ -4,17 +4,23 @@ const cors = require('cors');
 const foodServices = require('../model/food-services');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
 
 // gets all the foods in the db
 app.get('/foods', async (req, res) => {
+    console.log(req.query);
     request = req.query;
     const {diet, location, price} = request;
+    console.log(diet);
+    console.log(location);
+    console.log(price);
     try {
-        const result = await foodServices.getFoods(diet, price, location);
+        const result = await foodServices.getFoodsByFilters(diet, price, location);
+        console.log("awaiting");
+        console.log(result);
         res.send({foods: result});
     } catch (error) {
         console.log(error);

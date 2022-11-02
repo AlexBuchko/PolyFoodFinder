@@ -32,6 +32,10 @@ boolKeys = [
     "Vegetarian"
 ]
 
+keysToLower = [
+    "Name",
+]
+
 data = []
 for row in reader:
     #removing unused keys
@@ -45,6 +49,9 @@ for row in reader:
     #changing from either 'TRUE" string or none to bool value
     for key in boolKeys:
         row[key] = True if row[key] else False
+    #putting the names and restaurant names in lowercase
+    for key in keysToLower:
+        row[key] = row[key].lower()
     row["nutrition"] = nutritionInfo
     row["likes"] = 0
     row["dislikes"] = 0

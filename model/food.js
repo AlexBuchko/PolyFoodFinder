@@ -9,7 +9,7 @@ const foodSchema = new mongoose.Schema(
         },
         restaurant_id: {
             //add ref: "Restaurant" once restauarants are set up
-            type: [{ type: mongoose.Schema.Types.ObjectId }],
+            type: { type: mongoose.Schema.Types.ObjectId },
         },
         restaurant: {
             type: String,
@@ -74,6 +74,7 @@ const foodSchema = new mongoose.Schema(
             required: true,
             default: 0,
         },
+        price: Number,
     },
     { collection: "foods" }
 );

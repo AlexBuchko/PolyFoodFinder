@@ -12,11 +12,11 @@ app.use(express.json());
 
 // gets all the foods in the db
 app.get('/foods', async (req, res) => {
-    const foodName = req.query['name'];
-    const restName = req.query['restaurant'];
+    request = req.query;
+    const {diet, location, price} = request;
     try {
-        const result = await foodServices.getFoods(foodName, restName);
-        res.send({ foods: result });
+        const result = await foodServices.getFoodsByFilters(diet, price, location);
+        res.send({foods: result});
     } catch (error) {
         console.log(error);
         res.status(500).send('An error occurred in the server.');

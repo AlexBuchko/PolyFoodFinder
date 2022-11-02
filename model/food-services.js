@@ -64,9 +64,9 @@ async function getFoods(foodName, restName) {
     else if (foodName && !restName) {
         result = await findFoodByName(foodName);
     }
-    // else if (!foodName && restName) {
-    //     result = await findFoodByRest(restName);
-    // }
+    else if (!foodName && restName) {
+        result = await findFoodByRest(restName);
+    }
     return result;
 }
 
@@ -77,8 +77,19 @@ async function findFoodByName(fname) {
 
 async function findFoodByRest(rname) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({'restaurants':rname});
+    return await foodsModel.find({'restaurant':rname});
+}
+
+async function findFoodById(id){
+    const foodsModel = getDbConnection().model("foods", foodSchema);    
+    try{
+        return await foodsModel.findById(id);
+    }catch(error) {
+        console.log(error);
+        return undefined;
+    }
 }
 
 exports.getFoods = getFoods;
+exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;

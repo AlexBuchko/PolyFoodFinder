@@ -13,7 +13,6 @@ function MyApp() {
   }, [] );
 
   async function getData(){
-    console.log("aaaa");
     makeRequest().then( result => {
     if (result && result.status === 201)
       setFoodsData([...foodsData, result.data]);
@@ -24,13 +23,9 @@ function MyApp() {
     const loc = document.getElementById("location").value;
     const cost = document.getElementById("price").value;
     const dietRes= document.getElementById("dietRestriction").value;
-    console.log("making request");
     const request = {'location': loc, 'price': cost, 'diet': dietRes};
-    console.log(request);
     try {
       const response = await axios.get('http://localhost:4000/foods', { params: request});
-      console.log("response");
-      console.log(response.data);
       setFoodsData(response.data)    
     }
     catch (error){

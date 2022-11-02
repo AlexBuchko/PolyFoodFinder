@@ -13,41 +13,43 @@ function getDbConnection() {
 }
 
 async function getFoodsByFilters(diet, price, location){
+    console.log("in food serice facade");
     const foodsModel = getDbConnection().model("foods", foodSchema);
     let result;
-    searchParams = []
+    const searchParams = []
     if(diet === "None" && price === "Any" && location === "Any"){
-        return await foodsModel.find();
+        return await foodsModel.find({'price': {$gte:0}});
     }
     else{
         if(diet === "Vegan"){
-            searchParams.append({'vegan': true});
+            searchParams.push({'vegan': true});
         }
         else if (diet === "Vegetarian"){
-            searchParams.append({'vegetarian': true});
+            searchParams.push({'vegetarian': true});
         }
-        if(priceRange === "$20+") {
-            searchParams.append({'price': {$gt:20}});
+        if(price === "$20+") {
+            searchParams.push({'price': {$gt:20}});
         }
-        else if(priceRange === "Below $5") {
-            searchParams.append({'price': {$lt:5}});
+        else if(price === "Below $5") {
+            searchParams.push({'price': {$lt:5}});
         }
-        else if(priceRange === "$5 - $10") {
-            searchParams.append({'price': {$gte:5}});
-            searchParams.append({'price': {$lt:10}});
+        else if(price === "$5 - $10") {
+            searchParams.push({'price': {$gte:5}});
+            searchParams.push({'price': {$lt:10}});
         }
-        else if(priceRange === "$10 - $15") {
-            searchParams.append({'price': {$gte:10}});
-            searchParams.append({'price': {$lt:15}});
+        else if(price === "$10 - $15") {
+            searchParams.push({'price': {$gte:10}});
+            searchParams.push({'price': {$lt:15}});
         }
-        else if(priceRange === "$15 - $20") {
-            searchParams.append({'price': {$gte:16}});
-            searchParams.append({'price': {$lt:20}});
+        else if(price === "$15 - $20") {
+            searchParams.push({'price': {$gte:16}});
+            searchParams.push({'price': {$lt:20}});
         }
         else{
-            searchParams.append({'price': {$gte:0}})
+            searchParams.push({'price': {$gte:0}})
         }
     }
+    console.log("search params: ");
     console.log(searchParams);
     //add location stuff here later
     result = await foodsModel.find({$and: searchParams});

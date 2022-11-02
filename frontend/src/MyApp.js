@@ -28,7 +28,7 @@ function MyApp() {
     const request = {'location': loc, 'price': cost, 'diet': dietRes};
     console.log(request);
     try {
-      const response = await axios.get('http://localhost:5000/foods', { params: request});
+      const response = await axios.get('http://localhost:4000/foods', { params: request});
       console.log("response");
       console.log(response.data);
       setFoodsData(response.data)    

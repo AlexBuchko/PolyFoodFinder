@@ -12,61 +12,52 @@ function getDbConnection() {
     return dbConnection;
 }
 
-async function getFoodsByFilters(diet, price, location){
+async function getFoodsByFilters(diet, price, location) {
     console.log("in food serice facade");
     const foodsModel = getDbConnection().model("foods", foodSchema);
     let result;
-    const searchParams = []
-    if(diet === "None" && price === "Any" && location === "Any"){
-        return await foodsModel.find({'price': {$gte:0}});
-    }
-    else{
-        if(diet === "Vegan"){
-            searchParams.push({'vegan': true});
+    const searchParams = [];
+    if (diet === "None" && price === "Any" && location === "Any") {
+        return await foodsModel.find({ price: { $gte: 0 } });
+    } else {
+        if (diet === "Vegan") {
+            searchParams.push({ vegan: true });
+        } else if (diet === "Vegetarian") {
+            searchParams.push({ vegetarian: true });
         }
-        else if (diet === "Vegetarian"){
-            searchParams.push({'vegetarian': true});
-        }
-        if(price === "$20+") {
-            searchParams.push({'price': {$gt:20}});
-        }
-        else if(price === "Below $5") {
-            searchParams.push({'price': {$lt:5}});
-        }
-        else if(price === "$5 - $10") {
-            searchParams.push({'price': {$gte:5}});
-            searchParams.push({'price': {$lt:10}});
-        }
-        else if(price === "$10 - $15") {
-            searchParams.push({'price': {$gte:10}});
-            searchParams.push({'price': {$lt:15}});
-        }
-        else if(price === "$15 - $20") {
-            searchParams.push({'price': {$gte:16}});
-            searchParams.push({'price': {$lt:20}});
-        }
-        else{
-            searchParams.push({'price': {$gte:0}})
+        if (price === "$20+") {
+            searchParams.push({ price: { $gt: 20 } });
+        } else if (price === "Below $5") {
+            searchParams.push({ price: { $lt: 5 } });
+        } else if (price === "$5 - $10") {
+            searchParams.push({ price: { $gte: 5 } });
+            searchParams.push({ price: { $lt: 10 } });
+        } else if (price === "$10 - $15") {
+            searchParams.push({ price: { $gte: 10 } });
+            searchParams.push({ price: { $lt: 15 } });
+        } else if (price === "$15 - $20") {
+            searchParams.push({ price: { $gte: 16 } });
+            searchParams.push({ price: { $lt: 20 } });
+        } else {
+            searchParams.push({ price: { $gte: 0 } });
         }
     }
     console.log("search params: ");
     console.log(searchParams);
     //add location stuff here later
-    result = await foodsModel.find({$and: searchParams});
+    result = await foodsModel.find({ $and: searchParams });
     return result;
-
 }
 
 async function getFoods(foodName, restName) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     let result;
-    if (foodName === undefined && restName === undefined) {      // no food or restaurant specified
+    if (foodName === undefined && restName === undefined) {
+        // no food or restaurant specified
         result = await foodsModel.find();
-    }
-    else if (foodName && !restName) {
+    } else if (foodName && !restName) {
         result = await findFoodByName(foodName);
-    }
-    else if (!foodName && restName) {
+    } else if (!foodName && restName) {
         result = await findFoodByRest(restName);
     }
     return result;
@@ -74,19 +65,19 @@ async function getFoods(foodName, restName) {
 
 async function findFoodByName(fname) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({'name':fname});
+    return await foodsModel.find({ name: fname });
 }
 
 async function findFoodByRest(rname) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({'restaurant':rname});
+    return await foodsModel.find({ restaurant: rname });
 }
 
-async function findFoodById(id){
-    const foodsModel = getDbConnection().model("foods", foodSchema);    
-    try{
+async function findFoodById(id) {
+    const foodsModel = getDbConnection().model("foods", foodSchema);
+    try {
         return await foodsModel.findById(id);
-    }catch(error) {
+    } catch (error) {
         console.log(error);
         return undefined;
     }
@@ -95,3 +86,4 @@ async function findFoodById(id){
 exports.getFoods = getFoods;
 exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
+exports.getDbConnection = getDbConnection;

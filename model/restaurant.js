@@ -42,9 +42,7 @@ const restaurantSchema = new mongoose.Schema(
                 required: true,
             },
         },
-        foodId: {
-            type: [{ type: mongoose.Schema.Types.ObjectId }],
-        },
+        neighborhood: { type: String },
     },
     { collection: "restaurants" }
 );

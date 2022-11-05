@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const foodSchema = require("./food");
+const restaurantServices = require('../model/restaurant-services');
 
 let dbConnection;
 
@@ -48,13 +49,32 @@ async function getFoodsByFilters(diet, price, location){
         else{
             searchParams.push({'price': {$gte:0}})
         }
+        if(location != "Any"){
+            console.log("In location if");
+            validRestNames = await getRestaurantsInFilter(location);
+            console.log(validRestNames);
+            if(validRestNames.length > 0){
+                searchParams.push({$or: validRestNames});
+            }
+            else{
+                //this is just to make it return nothing when the restaurant filter doesn't have any items
+                searchParams.push({'restaurant': "no-name-match"});
+            }
+        }
     }
-    console.log("search params: ");
-    console.log(searchParams);
     //add location stuff here later
     result = await foodsModel.find({$and: searchParams});
     return result;
 
+}
+
+async function getRestaurantsInFilter(location){
+    restLookupTags = [];
+    restNames = await restaurantServices.getRestaurantsByLocation(location);
+    for(var i = 0, size = restNames.length; i < size; i++){
+        restLookupTags.push({'restaurant': restNames[i]})
+    }
+    return restLookupTags;
 }
 
 async function getFoods(foodName, restName) {

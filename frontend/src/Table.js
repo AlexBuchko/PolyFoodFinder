@@ -7,6 +7,7 @@ function TableHeader() {
         <th> Name</th>
         <th> Resturant </th>
         <th> Price </th>
+        <th> Likes </th>
         <th> More Info </th>
       </tr>
     </thead>
@@ -14,10 +15,11 @@ function TableHeader() {
 }
 
 function TableBody (props) {
-  console.log("props");
-  console.log(props.foodsData.foods);
   if(!props.foodsData.foods){
     return
+  }
+  if(props.foodsData.foods.length === 0){
+    return (<tr> No Items Were Found For This Search</tr>);
   }
   const rows = props.foodsData.foods.map((row, index) => {
     var priceStr = row.price;
@@ -32,6 +34,7 @@ function TableBody (props) {
         <td>{row.name}</td>
         <td>{row.restaurant}</td>
 	      <td>{priceStr}</td>
+        <td>{row.likes}</td>
         <td>
         <button>More Info</button>
         </td>

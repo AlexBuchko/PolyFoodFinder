@@ -24,6 +24,16 @@ async function getRestaurants(restName) {
     return result;
 }
 
+async function getRestaurantsByLocation(location) {
+    const restaurantsModel = getDbConnection().model("restaurants", restaurantSchema);
+    const restAtLocation = await restaurantsModel.find({neighborhood: location});
+    const validNames = [];
+    for(var i = 0, size = restAtLocation.length; i < size; i++){
+        validNames.push(restAtLocation[i].name);
+    }
+    return validNames;
+}
+
 async function findRestByName(rname) {
     const restaurantsModel = getDbConnection().model("restaurants", restaurantSchema);
     return await restaurantsModel.find({ 'name': rname });
@@ -41,3 +51,4 @@ async function findRestaurantById(id) {
 
 exports.getRestaurants = getRestaurants;
 exports.findRestaurantById = findRestaurantById;
+exports.getRestaurantsByLocation = getRestaurantsByLocation;

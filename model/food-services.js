@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const foodSchema = require("./food");
+const reviewSchema = require("./review");
+// const { add } = require("./restaurant");
 
 let dbConnection;
 
@@ -13,7 +15,7 @@ function getDbConnection() {
 }
 
 async function getFoodsByFilters(diet, price, location){
-    console.log("in food serice facade");
+    console.log("in food service facade");
     const foodsModel = getDbConnection().model("foods", foodSchema);
     let result;
     const searchParams = []
@@ -54,7 +56,6 @@ async function getFoodsByFilters(diet, price, location){
     //add location stuff here later
     result = await foodsModel.find({$and: searchParams});
     return result;
-
 }
 
 async function getFoods(foodName, restName) {
@@ -88,10 +89,41 @@ async function findFoodById(id){
         return await foodsModel.findById(id);
     }catch(error) {
         console.log(error);
+        return false;
+    }
+}
+
+// tried "return await foodsModel.findByIdAndUpdate(id, {$inc: {rating: +1}});"
+// but it didn't work
+async function incrementFoodRating(id, rating) {
+    const foodsModel = getDbConnection().model("foods", foodSchema);
+    try {
+        if (rating == "likes") {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {likes: +1}});
+        }
+        else {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {dislikes: +1}});
+        }
+    } catch(error) {
+        console.log(error);
         return undefined;
+    }
+}
+
+async function addReview(id, review){
+    const reviewsModel = getDbConnection().model("reviews", reviewSchema);
+    try {
+        const reviewToAdd = new reviewsModel(review);
+        const savedReview = await reviewToAdd.save();
+        return savedReview;
+    } catch(error) {
+        console.log(error);
+        return false;
     }
 }
 
 exports.getFoods = getFoods;
 exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
+exports.incrementFoodRating = incrementFoodRating;
+exports.addReview = addReview;

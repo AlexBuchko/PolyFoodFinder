@@ -43,10 +43,12 @@ const restaurantSchema = new mongoose.Schema(
             },
         },
         foodId: {
-            type: [{ type: mongoose.Schema.Types.ObjectId }],
+            type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'foods' }],
         },
     },
     { collection: "restaurants" }
 );
+
+// const restaurants = mongoose.model('restaurants', restaurantSchema);
 
 module.exports = restaurantSchema;

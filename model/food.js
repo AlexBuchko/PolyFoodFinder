@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const reviewSchema = require('./review');
 
 const foodSchema = new mongoose.Schema(
     {
@@ -9,7 +10,7 @@ const foodSchema = new mongoose.Schema(
         },
         restaurant_id: {
             //add ref: "Restaurant" once restauarants are set up
-            type: { type: mongoose.Schema.Types.ObjectId },
+            type: { type: mongoose.Schema.Types.ObjectId, ref: 'restaurants'},
         },
         restaurant: {
             type: String,
@@ -75,8 +76,15 @@ const foodSchema = new mongoose.Schema(
             default: 0,
         },
         price: Number,
+        review_id: {
+            type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'reviews' }],
+            // type: [reviewSchema],
+        },
+
     },
     { collection: "foods" }
 );
+
+// const foods = mongoose.model('foods', foodSchema);
 
 module.exports = foodSchema;

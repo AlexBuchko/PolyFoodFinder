@@ -76,11 +76,6 @@ const foodSchema = new mongoose.Schema(
             default: 0,
         },
         price: Number,
-        review_id: {
-            type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'reviews' }],
-            // type: [reviewSchema],
-        },
-
     },
     { collection: "foods" }
 );

@@ -45,10 +45,10 @@ app.put('/foods/:id/:rating', async (req, res) => {
         res.status(400).send("Bad Request");
 });
 
-app.post('foods/:id/reviews', async (req, res) => {         // not working properly also confused how to connect the ids
-    console.log("tomato")
+app.post('/foods/:id/reviews', async (req, res) => {         // not working properly also confused how to connect the ids
+    console.log("tomato")       // check if it's reaching
     const id = req.params['id'];
-    const review = req.body;
+    const review = req.body.review;
     const savedReview = await foodServices.addReview(id, review);
     if (savedReview)
     res.status(201).send(savedReview);

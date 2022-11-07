@@ -110,10 +110,13 @@ async function incrementFoodRating(id, rating) {
     }
 }
 
-async function addReview(id, review){
+async function addReview(id, rev){
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
     try {
-        const reviewToAdd = new reviewsModel(review);
+        const reviewToAdd = new reviewsModel({
+            review: rev,
+            food_id: id,
+        })
         const savedReview = await reviewToAdd.save();
         return savedReview;
     } catch(error) {

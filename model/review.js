@@ -7,6 +7,10 @@ const reviewSchema = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        food_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'foods',
+        }
     },
     { collection: "reviews" }
 );

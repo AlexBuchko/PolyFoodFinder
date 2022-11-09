@@ -55,6 +55,17 @@ app.post('/foods/:id/reviews', async (req, res) => {         // not working prop
         res.status(500).end();
 });
 
+app.get('/foods/:id/reviews', async (req, res) => {
+    const id = req.params['id'];
+    try {
+        const result = await foodServices.getReviews(id);
+        res.send({reviews: result});         
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('An error ocurred in the server.');
+    }
+});
+
 // gets all the restaurants in the db
 app.get('/restaurants', async (req, res) => {
     const restName = req.query['name'];

@@ -126,8 +126,14 @@ async function addReview(id, rev){
     }
 }
 
+async function getReviews(id) {
+    const reviewsModel = getDbConnection().model("reviews", reviewSchema);
+    return await reviewsModel.find({'food_id': id});
+}
+
 exports.getFoods = getFoods;
 exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.incrementFoodRating = incrementFoodRating;
 exports.addReview = addReview;
+exports.getReviews = getReviews;

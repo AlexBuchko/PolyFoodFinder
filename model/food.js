@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const reviewSchema = require('./review');
 
 const foodSchema = new mongoose.Schema(
     {
@@ -78,5 +79,7 @@ const foodSchema = new mongoose.Schema(
     },
     { collection: "foods" }
 );
+
+// const foods = mongoose.model('foods', foodSchema);
 
 module.exports = foodSchema;

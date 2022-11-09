@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const foodSchema = require("./food");
+const reviewSchema = require("./review");
+// const { add } = require("./restaurant");
 const restaurantServices = require('../model/restaurant-services');
 
 let dbConnection;
@@ -96,10 +98,54 @@ async function findFoodById(id) {
         return await foodsModel.findById(id);
     } catch (error) {
         console.log(error);
+        return false;
+    }
+}
+
+async function incrementFoodRating(id, rating) {
+    const foodsModel = getDbConnection().model("foods", foodSchema);
+    try {
+        if (rating == "likes") {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {likes: +1}});
+        }
+        else if (rating == "dislikes") {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {dislikes: +1}});
+        }
+        else if (rating == "poisonings") {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {poisonings: +1}});
+        }
+    } catch(error) {
+        console.log(error);
         return undefined;
     }
 }
 
+async function addReview(id, rev){
+    const reviewsModel = getDbConnection().model("reviews", reviewSchema);
+    try {
+        const reviewToAdd = new reviewsModel({
+            review: rev,
+            food_id: id,
+        })
+        const savedReview = await reviewToAdd.save();
+        return savedReview;
+    } catch(error) {
+        console.log(error);
+        return false;
+    }
+}
+
+async function getReviews(id) {
+    const reviewsModel = getDbConnection().model("reviews", reviewSchema);
+    return await reviewsModel.find({'food_id': id});
+}
+
+exports.getFoods = getFoods;
+exports.findFoodById = findFoodById;
+exports.getFoodsByFilters = getFoodsByFilters;
+exports.incrementFoodRating = incrementFoodRating;
+exports.addReview = addReview;
+exports.getReviews = getReviews;
 async function updateOne(id, update) {
     /* updates the food at the given id with the passed in update object
     update: {field: value} can have 1+ field - value pairs

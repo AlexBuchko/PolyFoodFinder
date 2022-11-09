@@ -93,16 +93,17 @@ async function findFoodById(id){
     }
 }
 
-// tried "return await foodsModel.findByIdAndUpdate(id, {$inc: {rating: +1}});"
-// but it didn't work
 async function incrementFoodRating(id, rating) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         if (rating == "likes") {
             return await foodsModel.findByIdAndUpdate(id, {$inc: {likes: +1}});
         }
-        else {
+        else if (rating == "dislikes") {
             return await foodsModel.findByIdAndUpdate(id, {$inc: {dislikes: +1}});
+        }
+        else if (rating == "poisonings") {
+            return await foodsModel.findByIdAndUpdate(id, {$inc: {poisonings: +1}});
         }
     } catch(error) {
         console.log(error);

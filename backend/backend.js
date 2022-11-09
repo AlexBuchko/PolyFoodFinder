@@ -37,7 +37,7 @@ app.get('/foods/:id', async (req, res) => {
 // is there a way we can stop one person from continuously spamming likes/dislikes?
 app.put('/foods/:id/:rating', async (req, res) => {
     const id = req.params['id'];
-    const rating = req.params['rating'];    // capture if it's a like/dislike
+    const rating = req.params['rating'];    // capture if it's a like/dislike/poisoning
     const result = await foodServices.incrementFoodRating(id, rating);
     if (result)
         res.status(200).send("Successfully incremented rating");

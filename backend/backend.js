@@ -29,12 +29,15 @@ app.get("/foods", async (req, res) => {
 
 // gets a specific food that matches the given id
 app.get("/foods/:id", async (req, res) => {
+    console.log("in backend");
     const id = req.params["id"];
     const result = await foodServices.findFoodById(id);
     if (result === undefined || result === null)
         res.status(404).send("Resource not found.");
     else {
-        res.send({ foods: result });
+        console.log(result);
+        res.send({ food: result });
+        console.log("you shouldn't see this");
     }
 });
 

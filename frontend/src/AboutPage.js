@@ -1,30 +1,36 @@
-import React from "react";
-import NutritionTable from "./NutritionTable";
-import Reviews from "./Reviews";
+import React, {useState, useEffect} from "react";
+import AboutPageHelper from "./AboutPageHelper";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-function AboutPage(props) {
-    const { food } = props;
-    let animalProductsMessage;
-    if (food.vegan) {
-        animalProductsMessage = "This food is vegan";
-    } else if (food.vegetarian) {
-        animalProductsMessage = "This food is vegetarian";
-    } else {
-        animalProductsMessage = "This food contains meat";
+function AboutPage() {
+    const {id} = useParams();
+    const [foodsData, setFoodsData] = useState({ foods: [] });
+
+    useEffect(() => {
+        getFood().then((result) => {
+            if (result) setFoodsData(result);
+        });
+    }, []);
+
+    async function getFood() {
+        getFoodById().then((result) => {
+            if (result && result.status === 201)
+                setFoodsData([...foodsData.food, result.data]);
+        });
     }
 
-    return (
-        <div>
-            <h1>{food.name}</h1>
-            <p>{animalProductsMessage}</p>
-            <p>served at {food.restaurant}</p>
-            <h2>Ingredients</h2>
-            <p>{food.ingredients}</p>
-            <h2>Nutritional Information</h2>
-            <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
-            <Reviews food={food}></Reviews>
-        </div>
-    );
-}
+    async function getFoodById() {
+        try {
+            const response = await axios.get("http://localhost:4000/foods/" + id);
+            setFoodsData(response.data);
+        } catch (error) {
+            //We're not handling errors. Just logging into the console.
+            console.log(error);
+            return false;
+        }
+    }
 
+    return(<AboutPageHelper food={foodsData.food}></AboutPageHelper>)
+}
 export default AboutPage;

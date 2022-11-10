@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 function TableHeader() {
     return (
@@ -35,7 +37,7 @@ function TableBody(props) {
                 <td>{priceStr}</td>
                 <td>{row.likes}</td>
                 <td>
-                    <button>More Info</button>
+                    <Link to={"/foods/" + row._id}>More Info</Link>
                 </td>
             </tr>
         );

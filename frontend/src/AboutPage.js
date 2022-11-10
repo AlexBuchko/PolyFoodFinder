@@ -5,25 +5,34 @@ import axios from 'axios';
 
 function AboutPage() {
     const {id} = useParams();
-    const [foodsData, setFoodsData] = useState({ foods: [] });
+    console.log(id);
+    const [foodsData, setFoodsData] = useState({ });
 
     useEffect(() => {
+        console.log("in useEffect");
+        console.log(id);
         getFood().then((result) => {
             if (result) setFoodsData(result);
         });
     }, []);
 
     async function getFood() {
+        console.log("in getFood");
+        console.log(id);
         getFoodById().then((result) => {
-            if (result && result.status === 201)
-                setFoodsData([...foodsData.food, result.data]);
+            console.log(result.data.food);
+            if (result && result.status === 200)
+                setFoodsData(result.data.food);
         });
     }
 
     async function getFoodById() {
+        console.log("in getFoodById");
+        console.log(id);
         try {
             const response = await axios.get("http://localhost:4000/foods/" + id);
-            setFoodsData(response.data);
+            console.log(response);
+            return response;
         } catch (error) {
             //We're not handling errors. Just logging into the console.
             console.log(error);
@@ -31,6 +40,6 @@ function AboutPage() {
         }
     }
 
-    return(<AboutPageHelper food={foodsData.food}></AboutPageHelper>)
+    return(<AboutPageHelper food={foodsData}></AboutPageHelper>);
 }
 export default AboutPage;

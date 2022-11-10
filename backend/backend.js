@@ -34,7 +34,7 @@ app.get("/foods/:id", async (req, res) => {
     if (result === undefined || result === null)
         res.status(404).send("Resource not found.");
     else {
-        res.send({ foods: result });
+        res.send({ food: result });
     }
 });
 

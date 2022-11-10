@@ -1,30 +1,45 @@
-import React from "react";
-import NutritionTable from "./NutritionTable";
-import Reviews from "./Reviews";
+import React, {useState, useEffect} from "react";
+import AboutPageHelper from "./AboutPageHelper";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-function AboutPage(props) {
-    const { food } = props;
-    let animalProductsMessage;
-    if (food.vegan) {
-        animalProductsMessage = "This food is vegan";
-    } else if (food.vegetarian) {
-        animalProductsMessage = "This food is vegetarian";
-    } else {
-        animalProductsMessage = "This food contains meat";
+function AboutPage() {
+    const {id} = useParams();
+    console.log(id);
+    const [foodsData, setFoodsData] = useState({ });
+
+    useEffect(() => {
+        console.log("in useEffect");
+        console.log(id);
+        getFood().then((result) => {
+            if (result) setFoodsData(result);
+        });
+    }, []);
+
+    async function getFood() {
+        console.log("in getFood");
+        console.log(id);
+        getFoodById().then((result) => {
+            console.log(result.data.food);
+            if (result && result.status === 200)
+                setFoodsData(result.data.food);
+        });
     }
 
-    return (
-        <div>
-            <h1>{food.name}</h1>
-            <p>{animalProductsMessage}</p>
-            <p>served at {food.restaurant}</p>
-            <h2>Ingredients</h2>
-            <p>{food.ingredients}</p>
-            <h2>Nutritional Information</h2>
-            <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
-            <Reviews food={food}></Reviews>
-        </div>
-    );
-}
+    async function getFoodById() {
+        console.log("in getFoodById");
+        console.log(id);
+        try {
+            const response = await axios.get("http://localhost:4000/foods/" + id);
+            console.log(response);
+            return response;
+        } catch (error) {
+            //We're not handling errors. Just logging into the console.
+            console.log(error);
+            return false;
+        }
+    }
 
+    return(<AboutPageHelper food={foodsData}></AboutPageHelper>);
+}
 export default AboutPage;

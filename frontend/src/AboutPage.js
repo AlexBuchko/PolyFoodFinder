@@ -1,18 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import AboutPageHelper from "./AboutPageHelper";
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function AboutPage() {
-    const {id} = useParams();
-    console.log(id);
-    const [foodsData, setFoodsData] = useState({ });
+    const { id } = useParams();
+    const [food, setFood] = useState({});
 
     useEffect(() => {
-        console.log("in useEffect");
-        console.log(id);
         getFood().then((result) => {
-            if (result) setFoodsData(result);
+            if (result) setFood(result);
         });
     }, []);
 
@@ -20,18 +17,15 @@ function AboutPage() {
         console.log("in getFood");
         console.log(id);
         getFoodById().then((result) => {
-            console.log(result.data.food);
-            if (result && result.status === 200)
-                setFoodsData(result.data.food);
+            if (result && result.status === 200) setFood(result.data.food);
         });
     }
 
     async function getFoodById() {
-        console.log("in getFoodById");
-        console.log(id);
         try {
-            const response = await axios.get("http://localhost:4000/foods/" + id);
-            console.log(response);
+            const response = await axios.get(
+                "http://localhost:4000/foods/" + id
+            );
             return response;
         } catch (error) {
             //We're not handling errors. Just logging into the console.
@@ -40,6 +34,6 @@ function AboutPage() {
         }
     }
 
-    return(<AboutPageHelper food={foodsData}></AboutPageHelper>);
+    return <AboutPageHelper food={food} setFood={setFood}></AboutPageHelper>;
 }
 export default AboutPage;

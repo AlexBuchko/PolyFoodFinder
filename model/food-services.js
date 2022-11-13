@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const foodSchema = require("./food");
 const reviewSchema = require("./review");
 // const { add } = require("./restaurant");
-const restaurantServices = require('../model/restaurant-services');
+const restaurantServices = require("../model/restaurant-services");
 
 let dbConnection;
 
@@ -43,14 +43,13 @@ async function getFoodsByFilters(diet, price, location) {
         } else {
             searchParams.push({ price: { $gte: 0 } });
         }
-        if(location != "Any"){
+        if (location != "Any") {
             validRestNames = await getRestaurantsInFilter(location);
-            if(validRestNames.length > 0){
-                searchParams.push({$or: validRestNames});
-            }
-            else{
+            if (validRestNames.length > 0) {
+                searchParams.push({ $or: validRestNames });
+            } else {
                 //this is just to make it return nothing when the restaurant filter doesn't have any items
-                searchParams.push({'restaurant': "no-name-match"});
+                searchParams.push({ restaurant: "no-name-match" });
             }
         }
     }
@@ -59,17 +58,18 @@ async function getFoodsByFilters(diet, price, location) {
     return result;
 }
 
-async function getRestaurantsInFilter(location){
+async function getRestaurantsInFilter(location) {
     restLookupTags = [];
     restNames = await restaurantServices.getRestaurantsByLocation(location);
-    for(var i = 0, size = restNames.length; i < size; i++){
-        restLookupTags.push({'restaurant': restNames[i]})
+    for (var i = 0, size = restNames.length; i < size; i++) {
+        restLookupTags.push({ restaurant: restNames[i] });
     }
     return restLookupTags;
 }
 
 async function getFoods(foodName, restName) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
+    console.log("getting foods");
     let result;
     if (foodName === undefined && restName === undefined) {
         // no food or restaurant specified
@@ -106,30 +106,35 @@ async function incrementFoodRating(id, rating) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         if (rating == "likes") {
-            return await foodsModel.findByIdAndUpdate(id, {$inc: {likes: +1}});
+            return await foodsModel.findByIdAndUpdate(id, {
+                $inc: { likes: +1 },
+            });
+        } else if (rating == "dislikes") {
+            return await foodsModel.findByIdAndUpdate(id, {
+                $inc: { dislikes: +1 },
+            });
+        } else if (rating == "poisonings") {
+            return await foodsModel.findByIdAndUpdate(id, {
+                $inc: { poisonings: +1 },
+            });
         }
-        else if (rating == "dislikes") {
-            return await foodsModel.findByIdAndUpdate(id, {$inc: {dislikes: +1}});
-        }
-        else if (rating == "poisonings") {
-            return await foodsModel.findByIdAndUpdate(id, {$inc: {poisonings: +1}});
-        }
-    } catch(error) {
+    } catch (error) {
         console.log(error);
         return undefined;
     }
 }
 
-async function addReview(id, rev){
+async function addReview(id, rev) {
+    console.log({ id, rev });
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
     try {
         const reviewToAdd = new reviewsModel({
             review: rev,
             food_id: id,
-        })
+        });
         const savedReview = await reviewToAdd.save();
         return savedReview;
-    } catch(error) {
+    } catch (error) {
         console.log(error);
         return false;
     }
@@ -137,7 +142,7 @@ async function addReview(id, rev){
 
 async function getReviews(id) {
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
-    return await reviewsModel.find({'food_id': id});
+    return await reviewsModel.find({ food_id: id });
 }
 
 exports.getFoods = getFoods;

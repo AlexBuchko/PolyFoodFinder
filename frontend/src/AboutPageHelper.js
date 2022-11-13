@@ -1,11 +1,10 @@
 import React from "react";
 import NutritionTable from "./NutritionTable";
 import Reviews from "./Reviews";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function AboutPageHelper(props) {
-    const food = props.food;
+    const { food, setFood } = props;
     let animalProductsMessage;
     if (food.vegan) {
         animalProductsMessage = "This food is vegan";
@@ -24,9 +23,8 @@ function AboutPageHelper(props) {
             <p>{food.ingredients}</p>
             <h2>Nutritional Information</h2>
             <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
-            <Reviews food={food}></Reviews>
+            <Reviews food={food} setFood={setFood}></Reviews>
             <Link to="/">Back To Search Page</Link>
-
         </div>
     );
 }

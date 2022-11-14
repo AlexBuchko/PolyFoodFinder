@@ -1,0 +1,164 @@
+---------------------------URL---------------------------------
+['https://calpolydining.com/restaurants/balance-cafe/',       #vista grande express deleted
+'https://calpolydining.com/restaurants/brunch/',
+'https://calpolydining.com/restaurants/hearth/',
+'https://calpolydining.com/restaurants/jamba/',
+'https://calpolydining.com/restaurants/noodles/',
+'https://calpolydining.com/restaurants/streats/',
+'https://calpolydining.com/restaurants/sweet-bar/',
+'https://calpolydining.com/restaurants/scout-coffee-co/',
+'https://calpolydining.com/restaurants/market-uu/',
+'https://calpolydining.com/restaurants/mustang-station/',
+'https://calpolydining.com/restaurants/red-radish/',
+'https://calpolydining.com/restaurants/health-shack/',
+'https://calpolydining.com/restaurants/julians-cafe-bistro/',
+'https://calpolydining.com/restaurants/subway/',
+'https://calpolydining.com/restaurants/einstein-bros-bagels/',
+'https://calpolydining.com/restaurants/market-poly-canyon/',
+'https://calpolydining.com/restaurants/subway-pcv/']
+
+-----------------------------Image-----------------------------
+{'src': '/static/4be16692abeea65f3d465e7021bc7b5c/7ec24/balance-cafe-logo.png', 'alt': 'Balance Café'}
+{'src': '/static/f64b062ac1d4c86882a7862a7c4d14bb/8e133/brunch-logo.png', 'alt': 'Brunch'}
+{'src': '/static/d8889f3a6d59b091b11b77dbb95c1cb3/d8028/hearth-logo.png', 'alt': 'Hearth'}
+{'src': '/static/fccf464f9018fcd016c546be38cd0ab4/2a0a1/jamba-logo.png', 'alt': 'Jamba'}
+{'src': '/static/67d12ba699804845e7f1af59af6d3625/de391/market-grand-ave-logo.png', 'alt': 'Market Grand Ave'}
+{'src': '/static/32ba19611687870e5d9ff96cf0db7604/de391/Mingle-Nosh-Circle.png', 'alt': 'Mingle + Nosh'}
+{'src': '/static/a3a7df19ef3335953344ec6fc3db439e/d2263/noodles-logo.png', 'alt': 'Noodles'}
+{'src': '/static/fa53df82de761b5f06dc595482dbdca7/adb00/streats-logo.png', 'alt': 'Streats'}
+{'src': '/static/0372fb9523f7f8f711f79e88902f61b0/399af/sweet-bar-logo.png', 'alt': 'Sweet Bar'}
+{'src': '/static/59c72f7afc30d7ec4e9eb7d0d9b81bbf/f7a8f/2796_CD_VistaGrande_Logo-Final.png', 'alt': 'Vista Grande Express'}
+{'src': '/static/df859425a9eec17cc2ec3ca6620ff4c0/8c11c/scout-coffee-logo.png', 'alt': 'Scout Coffee Co.'}
+{'src': '/static/afb968d695c4b934ae67f06ba029ce73/de391/market-uu-logo.png', 'alt': 'Market UU'}
+{'src': '/static/b83ca81f1c545c7118e742cb7c1aa451/04f4a/mustang-station-logo.png', 'alt': 'Mustang Station'}
+{'src': '/static/5049a4f1adbfd339bcee32051a392863/f7eaf/red-radish-logo.png', 'alt': 'Red Radish'}
+{'src': '/static/71153d9ec9e4f093d269b0c27343738f/89500/shake-smart-logo-1.png', 'alt': 'Shake Smart'}
+{'src': '/static/f965fd92c13a1d3dd19b701572e4758d/de391/starbucks-logo.png', 'alt': 'Starbucks UU'}
+{'src': '/static/c0deefbbb61b5defeba95ebba4e6bef0/c0cb2/Campus-Market.png', 'alt': 'Campus Market'}
+{'src': '/static/e1cdfa2076832f467d0c33b238463dd7/eeed9/health-shack.png', 'alt': 'Health Shack'}
+{'src': '/static/10d3e93cc4c2e5de38b7519039c2d317/f323e/julians-logo.png', 'alt': 'Julian’s Café Bistro'}
+{'src': '/static/faafa1335119b3ae0e752c327417c143/de391/Mustang-Eats-Logo-Final.png', 'alt': 'Mustang Eats'}
+{'src': '/static/f965fd92c13a1d3dd19b701572e4758d/de391/starbucks-logo.png', 'alt': 'Starbucks'}
+{'src': '/static/465660f40a63d185a5563038c969e2cb/61313/Subway.png', 'alt': 'Subway'}
+{'src': '/static/84948d40574b41f6a3bd9572d0c44c59/2ca86/Chick-Fil-A-Pop-Up.png', 'alt': 'Chick-fil-A Pop Up'}
+{'src': '/static/e41dcb6d2eebadfea82a8c4ba2ca9140/de391/Einstein-Bros-Bagels.png', 'alt': 'Einstein Bros Bagels'}
+{'src': '/static/22d6e46ba9c038b00cc0ac85e56bf02e/de391/Market-Poly-Canyon.png', 'alt': 'Market Poly Canyon'}
+{'src': '/static/465660f40a63d185a5563038c969e2cb/61313/Subway.png', 'alt': 'Subway'}
+
+-----------------------------FoodTruck Image-----------------------------
+['Balance Café',
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='99' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}      
+{'src': None, 'alt': 'G. Brothers Smokehouse'}
+{'src': '/static/db68f8078109f2c1885ac4bb654b2ff5/83eb1/G-Brothers-Smokehouse-Truck.png', 'alt': 'G. Brothers Smokehouse'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='59.99999999999999' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': 'G. Brothers Taqueria'}
+{'src': '/static/28b7e00b8088c842427579b5dd9ab267/b5c5c/g-brothers-taqueria.png', 'alt': 'G. Brothers Taqueria'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='242.00000000000003' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': 'Jewel of India'}
+{'src': '/static/58eaaa1d3eb0ca4346486693d00e6493/79db5/Jewel-of-India.jpg', 'alt': 'Jewel of India'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='138' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}     
+{'src': None, 'alt': 'Plant Ivy'}
+{'src': '/static/05e8dafcd5aaf43ef946983c079863b9/a5bcf/Plant-Ivy.png', 'alt': 'Plant Ivy'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='119.99999999999999' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': 'SLO Dog'}
+{'src': '/static/0324211c246edbb75e22f3abc34e1cba/44653/SLO-Dog.jpg', 'alt': 'SLO Dog'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='213' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}     
+{'src': None, 'alt': 'Sequel®'}
+{'src': '/static/f0b78293acf215c8dda3c09509a6c238/e9d75/sequel-logo.png', 'alt': 'Sequel®'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='250' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}     
+{'src': None, 'alt': 'Starbucks Truck'}
+{'src': '/static/f965fd92c13a1d3dd19b701572e4758d/de391/starbucks-truck-logo.png', 'alt': 'Starbucks Truck'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='183' width='250' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}     
+{'src': None, 'alt': 'Yabba Dabba Dogs'}
+{'src': '/static/dc1da6a584212c5cfa5aa3ccad7de4dd/329e6/fab18a_166ed3af5e27401098f0a627d511a088_mv2.png', 'alt': 'Yabba Dabba Dogs'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='900' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/6982e5914163ba57f3c84a828449e4b0/784ed/0401_CD-VGCCM_TriTipSandwich_FB_1200x900_FINAL.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/f2ef4ca2e7da76a547b8c2fa6f0e1175/8dbcc/primerib-scaled.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/aebfe6b4e0708aaf8889f9fee3baa6a3/8dbcc/banana-walnut-muffin.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='1200' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}   
+{'src': None, 'alt': 'Hummus'}
+{'src': '/static/39ad245441e31a093e2c2a7e7d1491d1/02dff/MKT_CanvasWrap-Artwork-Hummus-scaled.jpg', 'alt': 'Hummus'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='1205.0420168067226' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': ''}
+{'src': '/static/67a00777affd4e9c0d02e3cb3e1b46a3/46e36/Friday-Freebie-template.png', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': 'Food'}
+{'src': '/static/0384436b79c9e4c9416729a09bc6cc9d/8dbcc/pexels-ekaterina-bolovtsova-5702786-scaled.jpg', 'alt': 'Food'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='1205.0420168067226' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': ''}
+{'src': '/static/67a00777affd4e9c0d02e3cb3e1b46a3/46e36/Friday-Freebie-template.png', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='900' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/6982e5914163ba57f3c84a828449e4b0/784ed/0401_CD-VGCCM_TriTipSandwich_FB_1200x900_FINAL.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/9c9e7dbd275bc3b7e941aff8f6644157/8dbcc/04.20-ChefsTable-3174-scaled.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='750' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/91462d2a2010d478fe0fa675a61334a9/07d6a/brownie.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='1205.0420168067226' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': ''}
+{'src': '/static/67a00777affd4e9c0d02e3cb3e1b46a3/46e36/Friday-Freebie-template.png', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800.4000000000001' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': ''}
+{'src': '/static/3281f2c3a41e7054463a21daab039a61/1b035/I_pasta3.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='800' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}    
+{'src': None, 'alt': ''}
+{'src': '/static/30292f9e12e6efe092dff59339166e25/8dbcc/ginger-molasses-cookie-scaled.jpg', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='1205.0420168067226' width='1200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': ''}
+{'src': '/static/67a00777affd4e9c0d02e3cb3e1b46a3/46e36/Friday-Freebie-template.png', 'alt': ''}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='161' width='200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}     
+{'src': None, 'alt': 'The Dish logo'}
+{'src': '/static/a9536e2783c4d5bf105b4e96514ef1b9/6a6a1/the-dish-logo.svg', 'alt': 'The Dish logo'}
+{'src': "data:image/svg+xml;charset=utf-8,%3Csvg height='43.99999999999999' width='200' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E", 'alt': ''}
+{'src': None, 'alt': 'Cal Poly Campus Dining'}
+{'src': '/static/ea0f3181e4abe7cb51ba430b708821d1/c74b3/logo-white.png', 'alt': 'Cal Poly Campus Dining'}
+
+------------------------Food Trucks------------------------
+/restaurants/g-brothers-smokehouse/
+/restaurants/g-brothers-taqueria/
+/restaurants/jewel-of-india/
+/restaurants/plant-ivy/
+/restaurants/slo-dog/
+/restaurants/sequel/
+/restaurants/starbucks-truck/
+/restaurants/balance-cafe/
+/restaurants/brunch/
+/restaurants/hearth/
+/restaurants/jamba/
+/restaurants/market-grand-ave/
+/restaurants/mingle-nosh/
+/restaurants/noodles/
+/restaurants/streats/
+/restaurants/sweet-bar/
+/restaurants/vista-grande-express/
+/restaurants/scout-coffee-co/
+/restaurants/market-uu/
+/restaurants/mustang-station/
+/restaurants/red-radish/
+/restaurants/shake-smart/
+/restaurants/starbucks-uu/
+/restaurants/campus-market/
+/restaurants/health-shack/
+/restaurants/julians-cafe-bistro/
+/restaurants/mustang-eats/
+/restaurants/starbucks/
+/restaurants/subway/
+/restaurants/chick-fil-a-pop-up/
+/restaurants/einstein-bros-bagels/
+/restaurants/market-poly-canyon/
+/restaurants/subway-pcv/
+/restaurants/g-brothers-smokehouse/
+/restaurants/g-brothers-taqueria/
+/restaurants/jewel-of-india/
+/restaurants/plant-ivy/
+/restaurants/slo-dog/
+/restaurants/sequel/
+/restaurants/starbucks-truck/
+/restaurants/yabba-dabba-dogs/

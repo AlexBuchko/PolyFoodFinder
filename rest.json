@@ -1,0 +1,152 @@
+[
+    {
+        "name": "BALANCE CAFE",
+        "hours": "Monday - Friday: 7:00 am - 9:00 pm; Saturday - Sunday: 9:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "BRUNCH",
+        "hours": "Monday - Friday: 7:00 am - 9:00 pm; Saturday - Sunday: 9:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "HEARTH",
+        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "JAMBA",
+        "hours": "Monday - Friday: 6:30 am - 9:00 pm; Saturday - Sunday: 8:00 am - 8:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-1955"
+    },
+    {
+        "name": "NOODLES",
+        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "STREATS",
+        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "SCOUT COFFEE CO.",
+        "hours": "Monday - Friday: 6:30 am - 5:00 pm; Saturday - Sunday: 8:00 am - 5:00 pm",
+        "location": "Building 172, yakitutu Area",
+        "phone": "805-756-7731"
+    },
+    {
+        "name": "MARKET UU",
+        "hours": "Monday - Friday: 8:00 am - 5:00 pm; Saturday - Sunday: Closed",
+        "location": "Building 65, University Union Area",
+        "phone": "805-756-5668"
+    },
+    {
+        "name": "MUSTANG STATION",
+        "hours": "Monday - Friday: 10:30 am - 8:00 pm; Saturday: Closed; Sunday: 4:00 pm - 8:00 pm",
+        "location": "Building 65, University Union Area",
+        "phone": "805-756-4089"
+    },
+    {
+        "name": "RED RADISH",
+        "hours": "Monday - Friday: 10:30 am - 8:00 pm; Saturday: Closed; Sunday: 4:00 pm - 8:00 pm",
+        "location": "Building 65, University Union Area",
+        "phone": "805-756-7705"
+    },
+    {
+        "name": "HEALTH SHACK",
+        "hours": "Monday - Friday: 8:00 am - 4:00 pm; Saturday - Sunday: Closed",
+        "location": "Building 34, Kennedy Library Area",
+        "phone": "805-756-5135"
+    },
+    {
+        "name": "JULIANS CAFE BISTRO",
+        "hours": "Monday - Friday: 8:00 am - 3:00 pm; Saturday - Sunday: Closed",
+        "location": "[]",
+        "phone": "805-756-1126"
+    },
+    {
+        "name": "SUBWAY",
+        "hours": "Monday - Sunday: Open 24 hours",
+        "location": "Building 34, Kennedy Library Area",
+        "phone": "805-756-7829"
+    },
+    {
+        "name": "EINSTEIN BROS BAGELS",
+        "hours": "Monday - Friday: 7:00 am - 8:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
+        "location": "Building 171, Poly Canyon Village Area",
+        "phone": "805-756-1953"
+    },
+    {
+        "name": "MARKET POLY CANYON",
+        "hours": "Monday - Friday: 7:00 am - 8:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
+        "location": "Building 171, Poly Canyon Village Area",
+        "phone": "805-756-1959"
+    },
+    {
+        "name": "SUBWAY",
+        "hours": "Monday - Sunday: Open 24 hours",
+        "location": "[]",
+        "phone": "805-548-1400"
+    },
+    {
+        "name": "STARBUCKS",
+        "hours": "Monday - Friday: 7:30 am - 5:30 pm; Saturday - Sunday: Closed",
+        "location": "Building 24, Kennedy Library Area",
+        "phone": "805-756-7827"
+    },
+    {
+        "name": "SHAKE SMART",
+        "hours": "Monday - Friday: 7:00 am - 10:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
+        "location": "[]",
+        "phone": "[]"
+    },
+    {
+        "name": "SWEET BAR",
+        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    },
+    {
+        "name": "MUSTANG EATS",
+        "hours": "Monday - Thursday: 11:00 am - 3:00 pm (); Friday: 11:00 am - 2:00 pm (); Saturday - Sunday: Closed ()",
+        "location": "[]",
+        "phone": "[]"
+    },
+    {
+        "name": "CHICK-FIL-A",
+        "hours": "Monday - Saturday: 11:00 am - 8:00 pm; Sunday: Closed",
+        "location": "[]",
+        "phone": "[]"
+    },
+    {
+        "name": "STARBUCKS UU",
+        "hours": "Monday - Friday: 8:00 am - 5:00 pm; Saturday - Sunday: Closed",
+        "location": "Building 65, University Union Area",
+        "phone": "805-756-5668"
+    },
+    {
+        "name": "CAMPUS MARKET",
+        "hours": "Monday - Friday: 7:30 am - 6:00 pm; Saturday - Sunday: Closed",
+        "location": "Building 24, Kennedy Library Area",
+        "phone": "805-756-1265"
+    },
+    {
+        "name": "MINGLE + NOSH",
+        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "[]"
+    },
+    {
+        "name": "MARKET GRAND AVE",
+        "hours": "Monday - Friday: 6:30 am - 9:00 pm; Saturday - Sunday: 8:00 am - 9:00 pm",
+        "location": "Building 112, Vista Grande Area",
+        "phone": "805-756-5939"
+    }
+]

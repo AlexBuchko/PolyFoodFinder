@@ -4,51 +4,71 @@ import axios from "axios";
 
 export default function Reviews(props) {
     let { food, setFood } = props;
+    const [lFlag, setLFlag] = useState("False");
+    const [dFlag, setDFlag] = useState("False");
+    const [pFlag, setPFlag] = useState("False");
+    const [rFlag, setRFlag] = useState("False");
     const [review, setReview] = useState("");
 
     const handleClick = async (type) => {
-        try {
-            const response = await axios.put(
-                `http://localhost:4000/foods/${food._id}/${type}`
-            );
-
-            if (response && response.status === 200) {
-                const newVal = food[type] + 1;
-
-                if (type === "likes") {
-                    setFood({
-                        ...food,
-                        likes: newVal,
-                    });
-                } else if (type === "dislikes") {
-                    setFood({
-                        ...food,
-                        dislikes: newVal,
-                    });
-                } else {
-                    setFood({
-                        ...food,
-                        poisonings: newVal,
-                    });
-                }
-            }
-        } catch (error) {
-            //We're not handling errors. Just logging into the console.
-            console.error(error);
+        if((type === "likes" && lFlag === "True") || (type === "dislikes" && dFlag === "True") || (type === "poisonings" && pFlag === "True")){
+            alert("Cannot Add Aother Review");
         }
+        else{
+            try {
+                const response = await axios.put(
+                    `http://localhost:4000/foods/${food._id}/${type}`
+                );
+
+                if (response && response.status === 200) {
+                    const newVal = food[type] + 1;
+
+                    if (type === "likes") {
+                        setLFlag("True");
+                        setFood({
+                            ...food,
+                            likes: newVal,
+                        });
+                    } else if (type === "dislikes") {
+                        setDFlag("True");
+                        setFood({
+                            ...food,
+                            dislikes: newVal,
+                        });
+                    } else {
+                        setPFlag("True");
+                        setFood({
+                            ...food,
+                            poisonings: newVal,
+                        });
+                    }
+                }
+            } catch (error) {
+                //We're not handling errors. Just logging into the console.
+                console.error(error);
+            }
+        }    
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        console.log("sending reivew", review);
-        try {
-            const result = await axios.post(
-                `http://localhost:4000/foods/${food._id}/reviews`,
-                { review }
-            );
-        } catch (error) {
-            console.log(error);
+        if(rFlag === "True"){
+            alert("Cannot Add Another Review");
+            event.preventDefault();
         }
+        else {
+            setRFlag("True");
+            event.preventDefault();
+            console.log("sending reivew", review);
+            try {
+                const result = await axios.post(
+                    `http://localhost:4000/foods/${food._id}/reviews`,
+                    { review }
+                );
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
     };
     const handleChange = (event) => {
         setReview(event.target.value);

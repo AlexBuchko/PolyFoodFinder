@@ -1,152 +1,376 @@
 [
     {
-        "name": "BALANCE CAFE",
-        "hours": "Monday - Friday: 7:00 am - 9:00 pm; Saturday - Sunday: 9:00 am - 9:00 pm",
+        "name": "Balance Cafe",
+        "hour": {
+            "Mon": "7:00 am - 9:00 pm",
+            "Tue": "7:00 am - 9:00 pm",
+            "Wed": "7:00 am - 9:00 pm",
+            "Thu": "7:00 am - 9:00 pm",
+            "Fri": "7:00 am - 9:00 pm",
+            "Sat": "9:00 am - 9:00 pm",
+            "Sun": "9:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "BRUNCH",
-        "hours": "Monday - Friday: 7:00 am - 9:00 pm; Saturday - Sunday: 9:00 am - 9:00 pm",
+        "name": "Brunch",
+        "hour":{
+            "Mon": "7:00 am - 9:00 pm",
+            "Tue": "7:00 am - 9:00 pm",
+            "Wed": "7:00 am - 9:00 pm",
+            "Thu": "7:00 am - 9:00 pm",
+            "Fri": "7:00 am - 9:00 pm",
+            "Sat": "9:00 am - 9:00 pm",
+            "Sun": "9:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "HEARTH",
-        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "name": "Hearth",
+        "hour":{ 
+            "Mon": "10:00 am - 9:00 pm",
+            "Tue": "10:00 am - 9:00 pm",
+            "Wed": "10:00 am - 9:00 pm",
+            "Thu": "10:00 am - 9:00 pm",
+            "Fri": "10:00 am - 9:00 pm",
+            "Sat": "10:00 am - 9:00 pm",
+            "Sun": "10:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "JAMBA",
-        "hours": "Monday - Friday: 6:30 am - 9:00 pm; Saturday - Sunday: 8:00 am - 8:00 pm",
+        "name": "Jamba",
+        "hour":{
+            "Mon": "6:30 am - 9:00 pm",
+            "Tue": "6:30 am - 9:00 pm",
+            "Wed": "6:30 am - 9:00 pm",
+            "Thu": "6:30 am - 9:00 pm",
+            "Fri": "6:30 am - 9:00 pm",
+            "Sat": "8:00 am - 8:00 pm",
+            "Sun": "8:00 am - 8:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-1955"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-1955"
     },
     {
-        "name": "NOODLES",
-        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "name": "Noodles",
+        "hour":{
+            "Mon": "10:00 am - 9:00 pm",
+            "Tue": "10:00 am - 9:00 pm",
+            "Wed": "10:00 am - 9:00 pm",
+            "Thu": "10:00 am - 9:00 pm",
+            "Fri": "10:00 am - 9:00 pm",
+            "Sat": "10:00 am - 9:00 pm",
+            "Sun": "10:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "STREATS",
-        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "name": "Streats",
+        "hour":{
+            "Mon": "10:00 am - 9:00 pm",
+            "Tue": "10:00 am - 9:00 pm",
+            "Wed": "10:00 am - 9:00 pm",
+            "Thu": "10:00 am - 9:00 pm",
+            "Fri": "10:00 am - 9:00 pm",
+            "Sat": "10:00 am - 9:00 pm",
+            "Sun": "10:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "SCOUT COFFEE CO.",
-        "hours": "Monday - Friday: 6:30 am - 5:00 pm; Saturday - Sunday: 8:00 am - 5:00 pm",
+        "name": "Scout Coffee",
+        "hour":{
+            "Mon": "6:30 am - 5:00 pm",
+            "Tue": "6:30 am - 5:00 pm",
+            "Wed": "6:30 am - 5:00 pm",
+            "Thu": "6:30 am - 5:00 pm",
+            "Fri": "6:30 am - 5:00 pm",
+            "Sat": "8:00 am - 5:00 pm",
+            "Sun": "8:00 am - 5:00 pm"
+        },
         "location": "Building 172, yakitutu Area",
-        "phone": "805-756-7731"
+        "neighborhood": "yakitutu",
+        "phone_number": "805-756-7731"
     },
     {
-        "name": "MARKET UU",
-        "hours": "Monday - Friday: 8:00 am - 5:00 pm; Saturday - Sunday: Closed",
+        "name": "Market UU",
+        "hour":{
+            "Mon": "8:00 am - 5:00 pm",
+            "Tue": "8:00 am - 5:00 pm",
+            "Wed": "8:00 am - 5:00 pm",
+            "Thu": "8:00 am - 5:00 pm",
+            "Fri": "8:00 am - 5:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "Building 65, University Union Area",
-        "phone": "805-756-5668"
+        "neighborhood": "UU",
+        "phone_number": "805-756-5668"
     },
     {
-        "name": "MUSTANG STATION",
-        "hours": "Monday - Friday: 10:30 am - 8:00 pm; Saturday: Closed; Sunday: 4:00 pm - 8:00 pm",
+        "name": "Mustang Station",
+        "hour":{
+            "Mon": "10:30 am - 8:00 pm",
+            "Tue": "10:30 am - 8:00 pm",
+            "Wed": "10:30 am - 8:00 pm",
+            "Thu": "10:30 am - 8:00 pm",
+            "Fri": "10:30 am - 8:00 pm",
+            "Sat": "Closed",
+            "Sun": "4:00 pm - 8:00 pm"
+        },
         "location": "Building 65, University Union Area",
-        "phone": "805-756-4089"
+        "neighborhood": "UU",
+        "phone_number": "805-756-4089"
     },
     {
-        "name": "RED RADISH",
-        "hours": "Monday - Friday: 10:30 am - 8:00 pm; Saturday: Closed; Sunday: 4:00 pm - 8:00 pm",
+        "name": "Red Radish",
+        "hour":{
+            "Mon": "10:30 am - 8:00 pm",
+            "Tue": "10:30 am - 8:00 pm",
+            "Wed": "10:30 am - 8:00 pm",
+            "Thu": "10:30 am - 8:00 pm",
+            "Fri": "10:30 am - 8:00 pm",
+            "Sat": "Closed",
+            "Sun": "4:00 pm - 8:00 pm"
+        },
         "location": "Building 65, University Union Area",
-        "phone": "805-756-7705"
+        "neighborhood": "UU",
+        "phone_number": "805-756-7705"
     },
     {
-        "name": "HEALTH SHACK",
-        "hours": "Monday - Friday: 8:00 am - 4:00 pm; Saturday - Sunday: Closed",
+        "name": "Health Shack",
+        "hour":{
+            "Mon": "8:00 am - 4:00 pm",
+            "Tue": "8:00 am - 4:00 pm",
+            "Wed": "8:00 am - 4:00 pm",
+            "Thu": "8:00 am - 4:00 pm",
+            "Fri": "8:00 am - 4:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "Building 34, Kennedy Library Area",
-        "phone": "805-756-5135"
+        "neighborhood": "Kennedy Library",
+        "phone_number": "805-756-5135"
     },
     {
-        "name": "JULIANS CAFE BISTRO",
-        "hours": "Monday - Friday: 8:00 am - 3:00 pm; Saturday - Sunday: Closed",
-        "location": "[]",
-        "phone": "805-756-1126"
+        "name": "Julians Cafe Bistro",
+        "hour":{
+            "Mon": "8:00 am - 3:00 pm",
+            "Tue": "8:00 am - 3:00 pm",
+            "Wed": "8:00 am - 3:00 pm",
+            "Thu": "8:00 am - 3:00 pm",
+            "Fri": "8:00 am - 3:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
+        "location": "Kennedy Library",
+        "neighborhood": "Kennedy Library",
+        "phone_number": "805-756-1126"
     },
     {
-        "name": "SUBWAY",
-        "hours": "Monday - Sunday: Open 24 hours",
+        "name": "Subway",
+        "hour":{
+            "Mon": "Open 24 hours",
+            "Tue": "Open 24 hours",
+            "Wed": "Open 24 hours",
+            "Thu": "Open 24 hours",
+            "Fri": "Open 24 hours",
+            "Sat": "Open 24 hours",
+            "Sun": "Open 24 hours"
+        },
         "location": "Building 34, Kennedy Library Area",
-        "phone": "805-756-7829"
+        "neighborhood": "Kennedy Library",
+        "phone_number": "805-756-7829"
     },
     {
-        "name": "EINSTEIN BROS BAGELS",
-        "hours": "Monday - Friday: 7:00 am - 8:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
+        "name": "Einstein Bros Bagels",
+        "hour":{
+            "Mon": "7:00 am - 8:00 pm",
+            "Tue": "7:00 am - 8:00 pm",
+            "Wed": "7:00 am - 8:00 pm",
+            "Thu": "7:00 am - 8:00 pm",
+            "Fri": "7:00 am - 8:00 pm",
+            "Sat": "9:00 am - 8:00 pm",
+            "Sun": "9:00 am - 8:00 pm"
+        },
         "location": "Building 171, Poly Canyon Village Area",
-        "phone": "805-756-1953"
+        "neighborhood": "Poly Canyon Village",
+        "phone_number": "805-756-1953"
     },
     {
-        "name": "MARKET POLY CANYON",
-        "hours": "Monday - Friday: 7:00 am - 8:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
+        "name": "Market Poly Canyon",
+        "hour":{
+            "Mon": "7:00 am - 8:00 pm",
+            "Tue": "7:00 am - 8:00 pm",
+            "Wed": "7:00 am - 8:00 pm",
+            "Thu": "7:00 am - 8:00 pm",
+            "Fri": "7:00 am - 8:00 pm",
+            "Sat": "9:00 am - 8:00 pm",
+            "Sun": "9:00 am - 8:00 pm"
+        },
         "location": "Building 171, Poly Canyon Village Area",
-        "phone": "805-756-1959"
+        "neighborhood": "Poly Canyon Village",
+        "phone_number": "805-756-1959"
     },
     {
-        "name": "SUBWAY",
-        "hours": "Monday - Sunday: Open 24 hours",
-        "location": "[]",
-        "phone": "805-548-1400"
+        "name": "Subway",
+        "hour":{
+            "Mon": "Open 24 hours",
+            "Tue": "Open 24 hours",
+            "Wed": "Open 24 hours",
+            "Thu": "Open 24 hours",
+            "Fri": "Open 24 hours",
+            "Sat": "Open 24 hours",
+            "Sun": "Open 24 hours"
+        },
+        "location": "Building 171, Poly Canyon Village Area",
+        "neighborhood": "Poly Canyon Village",
+        "phone_number": "805-548-1400"
     },
     {
-        "name": "STARBUCKS",
-        "hours": "Monday - Friday: 7:30 am - 5:30 pm; Saturday - Sunday: Closed",
+        "name": "Starbucks",
+        "hour":{
+            "Mon": "7:30 am - 5:30 pm",
+            "Tue": "7:30 am - 5:30 pm",
+            "Wed": "7:30 am - 5:30 pm",
+            "Thu": "7:30 am - 5:30 pm",
+            "Fri": "7:30 am - 5:30 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "Building 24, Kennedy Library Area",
-        "phone": "805-756-7827"
+        "neighborhood": "Campus Market",
+        "phone_number": "805-756-7827"
     },
     {
-        "name": "SHAKE SMART",
-        "hours": "Monday - Friday: 7:00 am - 10:00 pm; Saturday - Sunday: 9:00 am - 8:00 pm",
-        "location": "[]",
-        "phone": "[]"
+        "name": "Shake Smart",
+        "hour":{
+            "Mon": "7:00 am - 10:00 pm",
+            "Tue": "7:00 am - 10:00 pm",
+            "Wed": "7:00 am - 10:00 pm",
+            "Thu": "7:00 am - 10:00 pm",
+            "Fri": "7:00 am - 10:00 pm",
+            "Sat": "9:00 am - 8:00 pm",
+            "Sun": "9:00 am - 8:00 pm"
+        },
+        "location": "Rec Center",
+        "neighborhood": "Rec Center",
+        "phone_number": "[]"
     },
     {
-        "name": "SWEET BAR",
-        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "name": "Sweet Bar",
+        "hour":{
+            "Mon": "10:00 am - 9:00 pm",
+            "Tue": "10:00 am - 9:00 pm",
+            "Wed": "10:00 am - 9:00 pm",
+            "Thu": "10:00 am - 9:00 pm",
+            "Fri": "10:00 am - 9:00 pm",
+            "Sat": "10:00 am - 9:00 pm",
+            "Sun": "10:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     },
     {
-        "name": "MUSTANG EATS",
-        "hours": "Monday - Thursday: 11:00 am - 3:00 pm (); Friday: 11:00 am - 2:00 pm (); Saturday - Sunday: Closed ()",
+        "name": "Mustang Eats",
+        "hour":{
+            "Mon": "11:00 am - 3:00 pm",
+            "Tue": "11:00 am - 3:00 pm",
+            "Wed": "11:00 am - 3:00 pm",
+            "Thu": "11:00 am - 3:00 pm",
+            "Fri": "11:00 am - 2:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "[]",
-        "phone": "[]"
+        "phone_number": "[]"
     },
     {
-        "name": "CHICK-FIL-A",
-        "hours": "Monday - Saturday: 11:00 am - 8:00 pm; Sunday: Closed",
-        "location": "[]",
-        "phone": "[]"
+        "name": "Chick-Fil-a",
+        "hour":{
+            "Mon": "11:00 am - 8:00 pm",
+            "Tue": "11:00 am - 8:00 pm",
+            "Wed": "11:00 am - 8:00 pm",
+            "Thu": "11:00 am - 8:00 pm",
+            "Fri": "11:00 am - 8:00 pm",
+            "Sat": "11:00 am - 8:00 pm",
+            "Sun": "Closed"
+        },
+        "location": "Building 171, Poly Canyon Village Area",
+        "neighborhood": "Poly Canyon Village",
+        "phone_number": "[]"
     },
     {
-        "name": "STARBUCKS UU",
-        "hours": "Monday - Friday: 8:00 am - 5:00 pm; Saturday - Sunday: Closed",
+        "name": "Starbucks UU",
+        "hour":{
+            "Mon": "8:00 am - 5:00 pm",
+            "Tue": "8:00 am - 5:00 pm",
+            "Wed": "8:00 am - 5:00 pm",
+            "Thu": "8:00 am - 5:00 pm",
+            "Fri": "8:00 am - 5:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "Building 65, University Union Area",
-        "phone": "805-756-5668"
+        "neighborhood": "UU",
+        "phone_number": "805-756-5668"
     },
     {
-        "name": "CAMPUS MARKET",
-        "hours": "Monday - Friday: 7:30 am - 6:00 pm; Saturday - Sunday: Closed",
+        "name": "Campus Market",
+        "hour":{
+            "Mon": "7:30 am - 6:00 pm",
+            "Tue": "7:30 am - 6:00 pm",
+            "Wed": "7:30 am - 6:00 pm",
+            "Thu": "7:30 am - 6:00 pm",
+            "Fri": "7:30 am - 6:00 pm",
+            "Sat": "Closed",
+            "Sun": "Closed"
+        },
         "location": "Building 24, Kennedy Library Area",
-        "phone": "805-756-1265"
+        "neighborhood": "Campus Market",
+        "phone_number": "805-756-1265"
     },
     {
-        "name": "MINGLE + NOSH",
-        "hours": "Monday - Sunday: 10:00 am - 9:00 pm",
+        "name": "Mingle + Nosh",
+        "hour":{
+            "Mon": "10:00 am - 9:00 pm",
+            "Tue": "10:00 am - 9:00 pm",
+            "Wed": "10:00 am - 9:00 pm",
+            "Thu": "10:00 am - 9:00 pm",
+            "Fri": "10:00 am - 9:00 pm",
+            "Sat": "10:00 am - 9:00 pm",
+            "Sun": "10:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "[]"
+        "neighborhood": "Vista Grande",
+        "phone_number": "[]"
     },
     {
-        "name": "MARKET GRAND AVE",
-        "hours": "Monday - Friday: 6:30 am - 9:00 pm; Saturday - Sunday: 8:00 am - 9:00 pm",
+        "name": "Market Grand Ave",
+        "hour":{
+            "Mon": "6:30 am - 9:00 pm",
+            "Tue": "6:30 am - 9:00 pm",
+            "Wed": "6:30 am - 9:00 pm",
+            "Thu": "6:30 am - 9:00 pm",
+            "Fri": "6:30 am - 9:00 pm",
+            "Sat": "8:00 am - 9:00 pm",
+            "Sun": "8:00 am - 9:00 pm"
+        },
         "location": "Building 112, Vista Grande Area",
-        "phone": "805-756-5939"
+        "neighborhood": "Vista Grande",
+        "phone_number": "805-756-5939"
     }
 ]

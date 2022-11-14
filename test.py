@@ -63,7 +63,6 @@ driver.quit()
 # need to process those data manually
     #'https://calpolydining.com/restaurants/chick-fil-a-pop-up/',
     #'https://calpolydining.com/restaurants/starbucks-uu/',
-    #'https://calpolydining.com/restaurants/mustang-eats/',
     #'https://calpolydining.com/restaurants/campus-market/',
     #'https://calpolydining.com/restaurants/mingle-nosh/',
     #'https://calpolydining.com/restaurants/market-grand-ave/',

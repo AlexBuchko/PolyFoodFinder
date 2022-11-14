@@ -43,6 +43,7 @@ const restaurantSchema = new mongoose.Schema(
             },
         },
         neighborhood: { type: String },
+        phone_number: { type: String },
     },
     { collection: "restaurants" }
 );

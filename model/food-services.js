@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const foodSchema = require("./food");
 const reviewSchema = require("./review");
-// const { add } = require("./restaurant");
 const restaurantServices = require("../model/restaurant-services");
 
 let dbConnection;

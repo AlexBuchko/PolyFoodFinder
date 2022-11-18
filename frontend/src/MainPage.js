@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import Table from './Table';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import Table from "./Table";
+import axios from "axios";
 
 function MainPage() {
     const [foodsData, setFoodsData] = useState({ foods: [] });

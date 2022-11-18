@@ -1,1 +1,8 @@
 FIGMA LINK: https://www.figma.com/file/sJcBUOTPh9FAqJsr1K5XTy/PolyBites-Home-Page?node-id=2%3A2
+
+How to set up VSCode plugin for Prettier:
+1) in the extensions tab, search for "prettier"
+2) download "Prettier = Code formatter" by Prettier
+
+How to download Prettier locally:
+"npm install --save-dev --save-exact prettier"

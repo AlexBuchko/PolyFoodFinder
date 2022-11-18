@@ -106,6 +106,6 @@ app.patch("/foods/:id", async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Project app listening at http://localhost:${port}`);
+app.listen(process.env.PORT || port, () => {
+    console.log("REST API is listening.");
 });

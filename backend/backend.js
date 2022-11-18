@@ -90,21 +90,6 @@ app.get("/restaurants/:id", async (req, res) => {
     }
 });
 
-//updating a specific food at an id
-//expects an object called "update"in the body of the request to define the update
-//IE: query.body = {update: {likes: 5, name: "pumpkin spice pancakes"}}
-app.patch("/foods/:id", async (req, res) => {
-    const id = req.params["id"];
-    const { update } = req.body;
-    console.log(req.body);
-    const result = await foodServices.updateOne(id, update);
-    if (result === undefined || result === null)
-        res.status(404).send("Resource not found.");
-    else {
-        res.send({ food: result });
-    }
-});
-
 app.listen(port, () => {
     console.log(`Project app listening at http://localhost:${port}`);
 });

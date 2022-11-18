@@ -26,7 +26,6 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        working-directory: backend # set to the folder with your app if it is not the root directory
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,5 +52,5 @@ jobs:
         with:
           app-name: 'polybites'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0CE5F85696F94CCCB908F364D7DCFF42 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2D8C4DB277A5486CB9147134814A6FF4 }}
           package: .

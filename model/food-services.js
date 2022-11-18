@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 const foodSchema = require("./food");
 const reviewSchema = require("./review");
-// const { add } = require("./restaurant");
 const restaurantServices = require("../model/restaurant-services");
 
 let dbConnection;
+
+function setConnection(newConn){
+  dbConnection = newConn;
+  return dbConnection;
+}
 
 function getDbConnection() {
     if (!dbConnection) {
@@ -172,3 +176,4 @@ exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.getDbConnection = getDbConnection;
 exports.updateOne = updateOne;
+exports.setConnection = setConnection;

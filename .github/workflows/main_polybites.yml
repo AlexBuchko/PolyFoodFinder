@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'polybites'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A06C1497E0594E329A4A39BD4FA354DE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9F664760F3704E549AF6E7ED48BECB9C }}
           package: .

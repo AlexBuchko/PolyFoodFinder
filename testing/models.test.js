@@ -10,9 +10,9 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 
 let mongoServer;
 let connFood;
-// let connRest
+let connRest
 let foodModel;
-// let restaurantModel;
+let restaurantModel;
 
 beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create();
@@ -24,22 +24,23 @@ beforeAll(async () => {
       };
     
     connFood = await mongoose.createConnection(uri, mongooseOpts);
-    // connRest = await mongoose.createConnection(uri, mongooseOpts);
+    connRest = await mongoose.createConnection(uri, mongooseOpts);
 
     foodModel = connFood.model("foods", foodSchema);
-    // restaurantModel = connRest.model("restaurants", restaurantSchema);
+    restaurantModel = connRest.model("restaurants", restaurantSchema);
 
 
     // why isn't this working????????????
+    console.log(foodServices);
     foodServices.setConnection(connFood);
-    // restaurantServices.setConnection(connRest);
+    restaurantServices.setConnection(connRest);
 });
 
 afterAll(async () => {
     await connFood.dropDatabase();
     await connFood.close();
-    // await connRest.dropDatabase();
-    // await connRest.close();
+    await connRest.dropDatabase();
+    await connRest.close();
     await mongoServer.stop();
 })
 

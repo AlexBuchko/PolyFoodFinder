@@ -3,6 +3,11 @@ const restaurantSchema = require("./restaurant");
 
 let dbConnection;
 
+function setConnection(newConn){
+    dbConnection = newConn;
+    return dbConnection;
+  }
+
 function getDbConnection() {
     if (!dbConnection) {
         dbConnection = mongoose.createConnection(
@@ -66,3 +71,4 @@ async function findRestaurantById(id) {
 exports.getRestaurants = getRestaurants;
 exports.findRestaurantById = findRestaurantById;
 exports.getRestaurantsByLocation = getRestaurantsByLocation;
+exports.setConnection = setConnection;

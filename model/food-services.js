@@ -5,6 +5,11 @@ const restaurantServices = require("../model/restaurant-services");
 
 let dbConnection;
 
+function setConnection(newConn){
+  dbConnection = newConn;
+  return dbConnection;
+}
+
 function getDbConnection() {
     if (!dbConnection) {
         dbConnection = mongoose.createConnection(
@@ -171,3 +176,4 @@ exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.getDbConnection = getDbConnection;
 exports.updateOne = updateOne;
+exports.setConnection = setConnection;

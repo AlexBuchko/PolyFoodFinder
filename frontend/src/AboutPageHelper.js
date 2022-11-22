@@ -3,6 +3,8 @@ import NutritionTable from "./NutritionTable";
 import Reviews from "./Reviews";
 import { Link } from "react-router-dom";
 
+import "./About.css";
+
 function AboutPageHelper(props) {
     const { food, setFood } = props;
     let animalProductsMessage;
@@ -15,7 +17,7 @@ function AboutPageHelper(props) {
     }
 
     return (
-        <div>
+        <div className="aboutBody">
             <h1>{food.name}</h1>
             <p>{animalProductsMessage}</p>
             <p>served at {food.restaurant}</p>

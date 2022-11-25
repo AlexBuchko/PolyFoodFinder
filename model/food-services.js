@@ -71,30 +71,30 @@ async function getRestaurantsInFilter(location) {
     return restLookupTags;
 }
 
-async function getFoods(foodName, restName) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    console.log("getting foods");
-    let result;
-    if (foodName === undefined && restName === undefined) {
-        // no food or restaurant specified
-        result = await foodsModel.find();
-    } else if (foodName && !restName) {
-        result = await findFoodByName(foodName);
-    } else if (!foodName && restName) {
-        result = await findFoodByRest(restName);
-    }
-    return result;
-}
+// async function getFoods(foodName, restName) {
+//     const foodsModel = getDbConnection().model("foods", foodSchema);
+//     console.log("getting foods");
+//     let result;
+//     if (foodName === undefined && restName === undefined) {
+//         // no food or restaurant specified
+//         result = await foodsModel.find();
+//     } else if (foodName && !restName) {
+//         result = await findFoodByName(foodName);
+//     } else if (!foodName && restName) {
+//         result = await findFoodByRest(restName);
+//     }
+//     return result;
+// }
 
-async function findFoodByName(fname) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({ name: fname });
-}
+// async function findFoodByName(fname) {
+//     const foodsModel = getDbConnection().model("foods", foodSchema);
+//     return await foodsModel.find({ name: fname });
+// }
 
-async function findFoodByRest(rname) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({ restaurant: rname });
-}
+// async function findFoodByRest(rname) {
+//     const foodsModel = getDbConnection().model("foods", foodSchema);
+//     return await foodsModel.find({ restaurant: rname });
+// }
 
 async function findFoodById(id) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
@@ -102,7 +102,7 @@ async function findFoodById(id) {
         return await foodsModel.findById(id);
     } catch (error) {
         console.log(error);
-        return false;
+        return undefined;
     }
 }
 
@@ -146,12 +146,19 @@ async function addReview(id, rev) {
 
 async function getReviews(id) {
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
-    return await reviewsModel.find({ food_id: id });
+    try {
+        return await reviewsModel.find({ food_id: id });
+    } catch(error) {
+        console.log(error);
+        return undefined;
+    }
+    
 }
+
 exports.incrementFoodRating = incrementFoodRating;
 exports.addReview = addReview;
 exports.getReviews = getReviews;
-exports.getFoods = getFoods;
+// exports.getFoods = getFoods;
 exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.getDbConnection = getDbConnection;

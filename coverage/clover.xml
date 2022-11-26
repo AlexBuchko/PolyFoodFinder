@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669418990425" clover="3.2.0">
-  <project timestamp="1669418990425" name="All files">
+<coverage generated="1669419276755" clover="3.2.0">
+  <project timestamp="1669419276755" name="All files">
     <metrics statements="116" coveredstatements="54" conditionals="35" coveredconditionals="7" methods="14" coveredmethods="7" elements="165" coveredelements="68" complexity="0" loc="116" ncloc="116" packages="1" files="5" classes="5"/>
     <file name="food-services.js" path="/Users/janjan/Desktop/csc307/PolyBites/PolyFoodFinder/model/food-services.js">
       <metrics statements="78" coveredstatements="37" conditionals="31" coveredconditionals="7" methods="8" coveredmethods="6"/>

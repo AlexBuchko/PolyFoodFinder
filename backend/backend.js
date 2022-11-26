@@ -79,6 +79,7 @@ app.get("/restaurants", async (req, res) => {
     }
 });
 
+// do we even use this function? can we delete?
 // gets a specific restaurant that matches the given id
 app.get("/restaurants/:id", async (req, res) => {
     const id = req.params["id"];

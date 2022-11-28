@@ -1,19 +1,11 @@
 const mongoose = require("mongoose");
 const restaurantSchema = require("./restaurant");
+const { getDbConnection } = require("./food-services");
 
 let dbConnection;
 
-function setConnection(newConn){
+function setConnection(newConn) {
     dbConnection = newConn;
-    return dbConnection;
-  }
-
-function getDbConnection() {
-    if (!dbConnection) {
-        dbConnection = mongoose.createConnection(
-            "mongodb+srv://poly:bites@polybitesdb.qbis9.mongodb.net/polybites?retryWrites=true&w=majority"
-        );
-    }
     return dbConnection;
 }
 

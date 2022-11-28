@@ -2,19 +2,24 @@ const mongoose = require("mongoose");
 const foodSchema = require("./food");
 const reviewSchema = require("./review");
 const restaurantServices = require("../model/restaurant-services");
+const { rawListeners } = require("./food");
+require("dotenv").config();
 
 let dbConnection;
 
-function setConnection(newConn){
-  dbConnection = newConn;
-  return dbConnection;
+function setConnection(newConn) {
+    dbConnection = newConn;
+    return dbConnection;
 }
 
 function getDbConnection() {
     if (!dbConnection) {
-        dbConnection = mongoose.createConnection(
-            "mongodb+srv://poly:bites@polybitesdb.qbis9.mongodb.net/polybites?retryWrites=true&w=majority"
-        );
+        const connectionString = process.env.MONGO_URI;
+        if (!connectionString) {
+            throw "mongo connection string not found";
+        } else {
+            dbConnection = mongoose.createConnection(connectionString);
+        }
     }
     return dbConnection;
 }

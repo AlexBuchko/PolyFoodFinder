@@ -46,6 +46,9 @@ export default function Reviews(props) {
                 `http://localhost:4000/foods/${food._id}/reviews`,
                 { review }
             );
+            if (result.status === 500) {
+                alert("error sending review");
+            }
         } catch (error) {
             console.log(error);
         }

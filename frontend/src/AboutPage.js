@@ -9,9 +9,10 @@ function AboutPage() {
 
     useEffect(() => {
         getFood().then((result) => {
+            //@ts-ignore
             if (result) setFood(result);
         });
-    }, []);
+    });
 
     async function getFood() {
         console.log("in getFood");

@@ -1,9 +1,11 @@
 import React from "react";
 import NutritionTable from "./NutritionTable";
 import Reviews from "./Reviews";
+import ReviewDisplay from "./ReviewDisplay";
 import { Link } from "react-router-dom";
 
 function AboutPageHelper(props) {
+    console.log(props);
     const { food, setFood } = props;
     let animalProductsMessage;
     if (food.vegan) {
@@ -23,7 +25,13 @@ function AboutPageHelper(props) {
             <p>{food.ingredients}</p>
             <h2>Nutritional Information</h2>
             <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
-            <Reviews food={food} setFood={setFood}></Reviews>
+            <div>
+                <h2>Reviews</h2>
+                <h3>Written Reviews</h3>
+                <ReviewDisplay></ReviewDisplay>
+                <Reviews food={food} setFood={setFood}></Reviews>
+            </div>
+
             <Link to="/">Back To Search Page</Link>
         </div>
     );

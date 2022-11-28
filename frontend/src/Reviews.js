@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./reviews.css";
 import axios from "axios";
+import AboutPageHelper from "./AboutPageHelper";
+import ReviewDisplay from "./ReviewDisplay";
 
 export default function Reviews(props) {
+    console.log("in reviews");
     let { food, setFood } = props;
     const [lFlag, setLFlag] = useState("False");
     const [dFlag, setDFlag] = useState("False");
@@ -94,9 +97,10 @@ export default function Reviews(props) {
 
         return likesMessage;
     };
+
     return (
         <div>
-            <h2>Reviews</h2>
+            <h3>Numerical Reviews</h3>
             <div className="buttons-wrapper">
                 <button
                     className="like-button"

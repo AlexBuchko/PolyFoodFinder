@@ -9,8 +9,8 @@ const reviewSchema = new mongoose.Schema(
         },
         food_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'foods',
-        }
+            ref: "foods",
+        },
     },
     { collection: "reviews" }
 );

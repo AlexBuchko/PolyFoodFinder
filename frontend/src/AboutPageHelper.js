@@ -5,7 +5,6 @@ import ReviewDisplay from "./ReviewDisplay";
 import { Link } from "react-router-dom";
 
 function AboutPageHelper(props) {
-    console.log(props);
     const { food, setFood } = props;
     let animalProductsMessage;
     if (food.vegan) {
@@ -27,8 +26,6 @@ function AboutPageHelper(props) {
             <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
             <div>
                 <h2>Reviews</h2>
-                <h3>Written Reviews</h3>
-                <ReviewDisplay></ReviewDisplay>
                 <Reviews food={food} setFood={setFood}></Reviews>
             </div>
 

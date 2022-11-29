@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import { useParams } from "react-router-dom"
+import React, { useState, useEffect } from "react";
 import "./reviews.css";
 import axios from "axios";
-import AboutPageHelper from "./AboutPageHelper";
 import ReviewDisplay from "./ReviewDisplay";
 
 export default function Reviews(props) {
-    console.log("in reviews");
     let { food, setFood } = props;
     const [lFlag, setLFlag] = useState("False");
     const [dFlag, setDFlag] = useState("False");
     const [pFlag, setPFlag] = useState("False");
     const [rFlag, setRFlag] = useState("False");
-    const [review, setReview] = useState("");
+    const [reviews, setReviews] = useState({});
+    const params = useParams();
+    const  id  = params.id;
+    
+
+    useEffect(() => {
+        getReviewsById().then((result) => {
+            if (result && result.status === 200) {
+                setReviews(result.data);
+            }
+        });
+    }, []);
 
     const handleClick = async (type) => {
         if((type === "likes" && lFlag === "True") || (type === "dislikes" && dFlag === "True") || (type === "poisonings" && pFlag === "True")){
@@ -53,12 +63,27 @@ export default function Reviews(props) {
         }    
     };
 
+    async function getReviewsById() {
+        try {
+            const response = await axios.get(
+                `http://localhost:4000/foods/${id}/reviews`,
+            );
+            setReviews(reviews);
+            return response;
+        } catch (error) {
+            //We're not handling errors. Just logging into the console.
+            console.log(error);
+            return false;
+        }
+    }
+
     const handleSubmit = async (event) => {
         if(rFlag === "True"){
             alert("Cannot Add Another Review");
             event.preventDefault();
         }
         else {
+            const review = document.getElementById("reviewInputField").value;
             setRFlag("True");
             event.preventDefault();
             console.log("sending reivew", review);
@@ -67,14 +92,15 @@ export default function Reviews(props) {
                     `http://localhost:4000/foods/${food._id}/reviews`,
                     { review }
                 );
+            //updating local state
+            const temp = reviews.reviews
+            temp.push({review: review});
+            setReviews({reviews: temp});
             } catch (error) {
                 console.log(error);
             }
         }
 
-    };
-    const handleChange = (event) => {
-        setReview(event.target.value);
     };
 
     const getReviewsMessage = (food) => {
@@ -100,6 +126,10 @@ export default function Reviews(props) {
 
     return (
         <div>
+            <h3>Written Reviews</h3>
+            <div className="scrollable-div">
+                <ReviewDisplay reviews={reviews}></ReviewDisplay>
+            </div>
             <h3>Numerical Reviews</h3>
             <div className="buttons-wrapper">
                 <button
@@ -130,10 +160,9 @@ export default function Reviews(props) {
                     <label>Leave a review</label>
                 </p>
                 <textarea
+                    id="reviewInputField"
                     rows="4"
                     cols="50"
-                    value={review}
-                    onChange={(event) => handleChange(event)}
                 ></textarea>
                 <br />
                 <input

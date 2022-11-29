@@ -1,7 +1,6 @@
 import React from "react";
 import NutritionTable from "./NutritionTable";
 import Reviews from "./Reviews";
-import ReviewDisplay from "./ReviewDisplay";
 import { Link } from "react-router-dom";
 
 function AboutPageHelper(props) {
@@ -25,7 +24,6 @@ function AboutPageHelper(props) {
             <h2>Nutritional Information</h2>
             <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
             <div>
-                <h2>Reviews</h2>
                 <Reviews food={food} setFood={setFood}></Reviews>
             </div>
 

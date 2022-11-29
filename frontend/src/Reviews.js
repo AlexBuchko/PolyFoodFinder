@@ -78,14 +78,13 @@ export default function Reviews(props) {
     }
 
     const handleSubmit = async (event) => {
+        event.preventDefault();
         if(rFlag === "True"){
             alert("Cannot Add Another Review");
-            event.preventDefault();
         }
         else {
             const review = document.getElementById("reviewInputField").value;
             setRFlag("True");
-            event.preventDefault();
             console.log("sending reivew", review);
             try {
                 const result = await axios.post(
@@ -126,11 +125,11 @@ export default function Reviews(props) {
 
     return (
         <div>
-            <h3>Written Reviews</h3>
+            <h3>Reviews</h3>
             <div className="scrollable-div">
                 <ReviewDisplay reviews={reviews}></ReviewDisplay>
             </div>
-            <h3>Numerical Reviews</h3>
+            <h3>Ratings</h3>
             <div className="buttons-wrapper">
                 <button
                     className="like-button"

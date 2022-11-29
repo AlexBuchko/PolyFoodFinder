@@ -68,28 +68,28 @@ app.get("/foods/:id/reviews", async (req, res) => {
 });
 
 // gets all the restaurants in the db
-app.get("/restaurants", async (req, res) => {
-    const restName = req.query["name"];
-    try {
-        const result = await restaurantServices.getRestaurants(restName);
-        res.send({ restaurants: result });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send("An error occurred in the server.");
-    }
-});
+// app.get("/restaurants", async (req, res) => {
+//     const restName = req.query["name"];
+//     try {
+//         const result = await restaurantServices.getRestaurants(restName);
+//         res.send({ restaurants: result });
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).send("An error occurred in the server.");
+//     }
+// });
 
 // do we even use this function? can we delete?
 // gets a specific restaurant that matches the given id
-app.get("/restaurants/:id", async (req, res) => {
-    const id = req.params["id"];
-    const result = await restaurantServices.findRestaurantById(id);
-    if (result === undefined || result === null)
-        res.status(404).send("Resource not found.");
-    else {
-        res.send({ restaurants: result });
-    }
-});
+// app.get("/restaurants/:id", async (req, res) => {
+//     const id = req.params["id"];
+//     const result = await restaurantServices.findRestaurantById(id);
+//     if (result === undefined || result === null)
+//         res.status(404).send("Resource not found.");
+//     else {
+//         res.send({ restaurants: result });
+//     }
+// });
 
 app.listen(port, () => {
     console.log(`Project app listening at http://localhost:${port}`);

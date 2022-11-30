@@ -149,12 +149,6 @@ async function getReviews(id) {
     return await reviewsModel.find({ food_id: id });
 }
 
-exports.getFoods = getFoods;
-exports.findFoodById = findFoodById;
-exports.getFoodsByFilters = getFoodsByFilters;
-exports.incrementFoodRating = incrementFoodRating;
-exports.addReview = addReview;
-exports.getReviews = getReviews;
 async function updateOne(id, update) {
     /* updates the food at the given id with the passed in update object
     update: {field: value} can have 1+ field - value pairs
@@ -176,4 +170,9 @@ exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.getDbConnection = getDbConnection;
 exports.updateOne = updateOne;
+
+exports.incrementFoodRating = incrementFoodRating;
+exports.addReview = addReview;
+exports.getReviews = getReviews;
 exports.setConnection = setConnection;
+

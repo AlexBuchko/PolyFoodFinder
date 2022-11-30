@@ -87,7 +87,7 @@ export default function Reviews(props) {
             setRFlag("True");
             console.log("sending reivew", review);
             try {
-                const result = await axios.post(
+                await axios.post(
                     `http://localhost:4000/foods/${food._id}/reviews`,
                     { review }
                 );

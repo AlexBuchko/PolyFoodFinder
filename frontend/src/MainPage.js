@@ -11,6 +11,7 @@ function MainPage() {
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    /* eslint-enable */
 
     async function getData() {
         makeRequest().then((result) => {

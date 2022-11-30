@@ -34,7 +34,10 @@ function AboutPageHelper(props) {
             <p>{food.ingredients}</p>
             <h2>Nutritional Information</h2>
             <NutritionTable nutritionInfo={food.nutrition}></NutritionTable>
-            <Reviews food={food} setFood={setFood}></Reviews>
+            <div>
+                <Reviews food={food} setFood={setFood}></Reviews>
+            </div>
+
             <Link to="/">Back To Search Page</Link>
         </div>
     );

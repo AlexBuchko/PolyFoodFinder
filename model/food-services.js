@@ -81,21 +81,26 @@ async function findFoodById(id) {
     }
 }
 
+// look up findByIdAndUpdate
+// set new to true and check test!
 async function incrementFoodRating(id, rating) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         if (rating == "likes") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { likes: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id, 
+                {$inc: { likes: +1 }},
+                {new: true},
+            );
         } else if (rating == "dislikes") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { dislikes: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id,
+                {$inc: { dislikes: +1 }},
+                {new: true},
+            );
         } else if (rating == "poisonings") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { poisonings: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id,
+                {$inc: { poisonings: +1 }},
+                {new: true},
+            );
         }
     } catch (error) {
         console.log(error);

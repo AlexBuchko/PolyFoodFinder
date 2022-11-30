@@ -158,8 +158,10 @@ describe("tests incrementFoodRating", () => {
 
         const id = foodResult.id;
         const rating = "likes";
+        const prevRating = foodResult.likes;
         const result = await foodServices.incrementFoodRating(id, rating);
         expect(result).toBeTruthy();
+        expect(result.likes).toBe(prevRating + 1);
     });
 
     test("increment dislikes", async () => {
@@ -189,8 +191,10 @@ describe("tests incrementFoodRating", () => {
 
         const id = foodResult.id;
         const rating = "dislikes";
+        const prevRating = foodResult.dislikes;
         const result = await foodServices.incrementFoodRating(id, rating);
         expect(result).toBeTruthy();
+        expect(result.dislikes).toBe(prevRating + 1);
     });
 
     test("increment poisonings", async () => {
@@ -220,8 +224,10 @@ describe("tests incrementFoodRating", () => {
 
         const id = foodResult.id;
         const rating = "poisonings";
+        const prevRating = foodResult.poisonings;
         const result = await foodServices.incrementFoodRating(id, rating);
         expect(result).toBeTruthy();
+        expect(result.poisonings).toBe(prevRating + 1);
     });
 
     test("increment unknown rating - error", async () => {

@@ -46,6 +46,9 @@ export default function Reviews(props) {
                 `http://localhost:4000/foods/${food._id}/reviews`,
                 { review }
             );
+            if (result.status === 500) {
+                alert("error sending review");
+            }
         } catch (error) {
             console.log(error);
         }
@@ -102,9 +105,9 @@ export default function Reviews(props) {
                 food.poisonings !== 1 ? "people" : "person"
             } reported having food poisoning after eating this`}</p>
             <form>
-                <p>
-                    <label>Leave a review</label>
-                </p>
+                <h5>
+                    <label className="review-header">Leave a review</label>
+                </h5>
                 <textarea
                     rows="4"
                     cols="50"
@@ -115,6 +118,7 @@ export default function Reviews(props) {
                 <input
                     type="submit"
                     value="Submit"
+                    className="submit-button"
                     onClick={(event) => {
                         handleSubmit(event);
                     }}

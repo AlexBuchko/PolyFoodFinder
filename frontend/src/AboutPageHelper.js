@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function AboutPageHelper(props) {
     const { food, setFood } = props;
     let animalProductsMessage;
+
     if (food.vegan) {
         animalProductsMessage = "This food is vegan";
     } else if (food.vegetarian) {
@@ -14,9 +15,19 @@ function AboutPageHelper(props) {
         animalProductsMessage = "This food contains meat";
     }
 
+    const capitalize = (s) => {
+        if (!s) {
+            return "";
+        }
+        return s
+            .split(" ")
+            .map((word) => word[0].toUpperCase() + word.substring(1))
+            .join(" ");
+    };
+
     return (
-        <div>
-            <h1>{food.name}</h1>
+        <div className="aboutBody">
+            <h1>{capitalize(food.name)}</h1>
             <p>{animalProductsMessage}</p>
             <p>served at {food.restaurant}</p>
             <h2>Ingredients</h2>

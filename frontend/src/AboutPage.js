@@ -11,7 +11,7 @@ function AboutPage() {
         getFood().then((result) => {
             if (result) setFood(result);
         });
-    }, []);
+    });
 
     async function getFood() {
         console.log("in getFood");

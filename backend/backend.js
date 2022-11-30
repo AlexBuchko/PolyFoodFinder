@@ -47,13 +47,11 @@ app.put("/foods/:id/:rating", async (req, res) => {
     else res.status(400).send("Bad Request");
 });
 
-
 app.post("/foods/:id/reviews", async (req, res) => {
     // console.log("in reviews post");
     const id = req.params["id"];
 
     const review = req.body.review;
-    const id = req.params['id'];
     const savedReview = await foodServices.addReview(id, review);
     if (savedReview) res.status(201).send(savedReview);
     else res.status(500).end();

@@ -39,17 +39,27 @@ export default function Reviews(props) {
                     const newVal = food[type] + 1;
 
                     if (type === "likes") {
-                        setLFlag("True");
-                        setFood({
-                            ...food,
-                            likes: newVal,
-                        });
+                        if(dFlag === "False"){
+                            setLFlag("True");
+                            setFood({
+                                ...food,
+                                likes: newVal,
+                            });
+                        }
+                        else{
+                            alert("Cannot like and dislike the same item.");
+                        }    
                     } else if (type === "dislikes") {
-                        setDFlag("True");
-                        setFood({
-                            ...food,
-                            dislikes: newVal,
-                        });
+                        if(lFlag === "False"){
+                            setDFlag("True");
+                            setFood({
+                                ...food,
+                                dislikes: newVal,
+                            });
+                        }
+                        else{
+                            alert("Cannot like and dislike the same item.");
+                        }
                     } else {
                         setPFlag("True");
                         setFood({

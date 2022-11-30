@@ -49,6 +49,7 @@ app.put("/foods/:id/:rating", async (req, res) => {
 
 app.post("/foods/:id/reviews", async (req, res) => {
     const id = req.params["id"];
+
     const review = req.body.review;
     const savedReview = await foodServices.addReview(id, review);
     if (savedReview) res.status(201).send(savedReview);
@@ -66,44 +67,6 @@ app.get("/foods/:id/reviews", async (req, res) => {
     }
 });
 
-// gets all the restaurants in the db
-app.get("/restaurants", async (req, res) => {
-    const restName = req.query["name"];
-    try {
-        const result = await restaurantServices.getRestaurants(restName);
-        res.send({ restaurants: result });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send("An error occurred in the server.");
-    }
-});
-
-// gets a specific restaurant that matches the given id
-app.get("/restaurants/:id", async (req, res) => {
-    const id = req.params["id"];
-    const result = await restaurantServices.findRestaurantById(id);
-    if (result === undefined || result === null)
-        res.status(404).send("Resource not found.");
-    else {
-        res.send({ restaurants: result });
-    }
-});
-
-//updating a specific food at an id
-//expects an object called "update"in the body of the request to define the update
-//IE: query.body = {update: {likes: 5, name: "pumpkin spice pancakes"}}
-app.patch("/foods/:id", async (req, res) => {
-    const id = req.params["id"];
-    const { update } = req.body;
-    console.log(req.body);
-    const result = await foodServices.updateOne(id, update);
-    if (result === undefined || result === null)
-        res.status(404).send("Resource not found.");
-    else {
-        res.send({ food: result });
-    }
-});
-
-app.listen(process.env.PORT || port, () => {
-    console.log("REST API is listening.");
+app.listen(port, () => {
+    console.log(`Project app listening at http://localhost:${port}`);
 });

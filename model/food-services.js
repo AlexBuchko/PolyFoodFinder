@@ -71,56 +71,36 @@ async function getRestaurantsInFilter(location) {
     return restLookupTags;
 }
 
-async function getFoods(foodName, restName) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    console.log("getting foods");
-    let result;
-    if (foodName === undefined && restName === undefined) {
-        // no food or restaurant specified
-        result = await foodsModel.find();
-    } else if (foodName && !restName) {
-        result = await findFoodByName(foodName);
-    } else if (!foodName && restName) {
-        result = await findFoodByRest(restName);
-    }
-    return result;
-}
-
-async function findFoodByName(fname) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({ name: fname });
-}
-
-async function findFoodByRest(rname) {
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    return await foodsModel.find({ restaurant: rname });
-}
-
 async function findFoodById(id) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         return await foodsModel.findById(id);
     } catch (error) {
         console.log(error);
-        return false;
+        return undefined;
     }
 }
 
+// look up findByIdAndUpdate
+// set new to true and check test!
 async function incrementFoodRating(id, rating) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         if (rating == "likes") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { likes: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id, 
+                {$inc: { likes: +1 }},
+                {new: true},
+            );
         } else if (rating == "dislikes") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { dislikes: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id,
+                {$inc: { dislikes: +1 }},
+                {new: true},
+            );
         } else if (rating == "poisonings") {
-            return await foodsModel.findByIdAndUpdate(id, {
-                $inc: { poisonings: +1 },
-            });
+            return await foodsModel.findByIdAndUpdate(id,
+                {$inc: { poisonings: +1 }},
+                {new: true},
+            );
         }
     } catch (error) {
         console.log(error);
@@ -146,34 +126,19 @@ async function addReview(id, rev) {
 
 async function getReviews(id) {
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
-    return await reviewsModel.find({ food_id: id });
+    try {
+        return await reviewsModel.find({ food_id: id });
+    } catch(error) {
+        console.log(error);
+        return undefined;
+    }
+    
 }
 
-exports.getFoods = getFoods;
-exports.findFoodById = findFoodById;
-exports.getFoodsByFilters = getFoodsByFilters;
 exports.incrementFoodRating = incrementFoodRating;
 exports.addReview = addReview;
 exports.getReviews = getReviews;
-async function updateOne(id, update) {
-    /* updates the food at the given id with the passed in update object
-    update: {field: value} can have 1+ field - value pairs
-    return: the updated document
-    EX: updateOne(<id>, {likes: 5}) would return the food at that ID with it's likes set to 5
-    */
-    const foodsModel = getDbConnection().model("foods", foodSchema);
-    try {
-        //new: true makes it return the updated food, not the old one
-        return await foodsModel.findByIdAndUpdate(id, update, { new: true });
-    } catch (err) {
-        console.log("error in updateOne", err);
-        return undefined;
-    }
-}
-
-exports.getFoods = getFoods;
 exports.findFoodById = findFoodById;
 exports.getFoodsByFilters = getFoodsByFilters;
 exports.getDbConnection = getDbConnection;
-exports.updateOne = updateOne;
 exports.setConnection = setConnection;

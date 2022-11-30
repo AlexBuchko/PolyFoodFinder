@@ -26,6 +26,7 @@ export default function Reviews(props) {
     /* eslint-enable */
 
     const handleClick = async (type) => {
+        //check for spam protection - dont allow an action to go through on a button that has already been clicked.
         if((type === "likes" && lFlag === "True") || (type === "dislikes" && dFlag === "True") || (type === "poisonings" && pFlag === "True")){
             alert("Cannot Add Aother Review");
         }

@@ -3,8 +3,6 @@ import NutritionTable from "./NutritionTable";
 import Reviews from "./Reviews";
 import { Link } from "react-router-dom";
 
-import "./About.css";
-
 function AboutPageHelper(props) {
     const { food, setFood } = props;
     let animalProductsMessage;

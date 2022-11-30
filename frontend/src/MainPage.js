@@ -9,7 +9,8 @@ function MainPage() {
         getData().then((result) => {
             if (result) setFoodsData(result);
         });
-    });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     async function getData() {
         makeRequest().then((result) => {

@@ -8,11 +8,9 @@ function AboutPage() {
     const [food, setFood] = useState({});
 
     useEffect(() => {
-        getFood().then((result) => {
-            //@ts-ignore
-            if (result) setFood(result);
-        });
-    });
+        getFood();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     async function getFood() {
         console.log("in getFood");

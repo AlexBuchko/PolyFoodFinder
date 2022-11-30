@@ -9,7 +9,7 @@ function MainPage() {
         getData().then((result) => {
             if (result) setFoodsData(result);
         });
-    /* eslint-disable */
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     /* eslint-enable */
 

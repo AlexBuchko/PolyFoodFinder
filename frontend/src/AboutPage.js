@@ -11,7 +11,9 @@ function AboutPage() {
         getFood().then((result) => {
             if (result) setFood(result);
         });
-    });
+    /* eslint-disable */
+    }, []);
+    /* eslint-enable */
 
     async function getFood() {
         console.log("in getFood");

@@ -9,7 +9,9 @@ function MainPage() {
         getData().then((result) => {
             if (result) setFoodsData(result);
         });
-    });
+    /* eslint-disable */
+    }, []);
+    /* eslint-enable */
 
     async function getData() {
         makeRequest().then((result) => {

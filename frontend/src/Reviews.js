@@ -21,7 +21,9 @@ export default function Reviews(props) {
                 setReviews(result.data);
             }
         });
+    /* eslint-disable */
     }, []);
+    /* eslint-enable */
 
     const handleClick = async (type) => {
         if((type === "likes" && lFlag === "True") || (type === "dislikes" && dFlag === "True") || (type === "poisonings" && pFlag === "True")){

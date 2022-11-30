@@ -8,7 +8,4 @@
 2022.11.30 14:53:51 INFO  no build target found for C:\Github\CSC369\lab5\src\main\scala\Main.scala. Using presentation compiler with project's scala-library version: 3.2.0
 Nov 30, 2022 2:56:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-<<<<<<< Updated upstream
 2022.11.30 14:57:03 INFO  shutting down Metals
-=======
->>>>>>> Stashed changes

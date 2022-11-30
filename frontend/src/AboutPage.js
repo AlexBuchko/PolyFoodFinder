@@ -8,9 +8,8 @@ function AboutPage() {
     const [food, setFood] = useState({});
 
     useEffect(() => {
-        getFood().then((result) => {
-            if (result) setFood(result);
-        });
+        getFood();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     async function getFood() {

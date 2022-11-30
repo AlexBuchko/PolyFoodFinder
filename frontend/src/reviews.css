@@ -1,3 +1,45 @@
 .buttons-wrapper button {
     margin-right: 1rem;
 }
+
+button {
+    margin-bottom: 2rem;
+}
+
+.submit-button {
+    margin-bottom: 2rem;
+}
+
+.like-button {
+    border: 1px solid var(--primary);
+}
+
+.like-button:focus {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.dislike-button {
+    border: 1px solid var(--accent2);
+}
+
+.dislike-button:focus {
+    border: 1px solid var(--accent2);
+    background-color: var(--accent2);
+    color: var(--background);
+}
+
+.poison-button {
+    border: 1px solid var(--accent1);
+}
+
+.poison-button:focus {
+    border: 1px solid var(--accent1);
+    background-color: var(--accent1);
+    color: var(--background);
+}
+
+.review-header {
+    color: var(--primary);
+}

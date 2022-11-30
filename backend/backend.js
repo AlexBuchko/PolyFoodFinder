@@ -48,7 +48,6 @@ app.put("/foods/:id/:rating", async (req, res) => {
 });
 
 app.post("/foods/:id/reviews", async (req, res) => {
-    // console.log("in reviews post");
     const id = req.params["id"];
     const review = req.body.review;
     const savedReview = await foodServices.addReview(id, review);

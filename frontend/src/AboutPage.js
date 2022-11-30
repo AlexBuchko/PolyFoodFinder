@@ -11,10 +11,9 @@ function AboutPage() {
         getFood();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    /* eslint-enable */
 
     async function getFood() {
-        console.log("in getFood");
-        console.log(id);
         getFoodById().then((result) => {
             if (result && result.status === 200) setFood(result.data.food);
         });

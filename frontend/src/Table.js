@@ -46,10 +46,12 @@ function TableBody(props) {
 
 function Table(props) {
     return (
-        <table>
-            <TableHeader />
-            <TableBody foodsData={props.foodsData} />
-        </table>
+        <div className="scrollable-div">
+            <table>
+                <TableHeader />
+                <TableBody foodsData={props.foodsData} />
+            </table>
+        </div>    
     );
 }
 

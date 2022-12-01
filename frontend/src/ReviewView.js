@@ -1,9 +1,8 @@
 import React from "react";
 
-
 function ReviewView(props) {
     const reviews = props.foodsData;
-    if(reviews === undefined){
+    if (reviews === undefined) {
         return <tr> No Reviews Exist For This Item</tr>;
     }
     if (Object.keys(reviews).length === 0) {
@@ -17,7 +16,6 @@ function ReviewView(props) {
         );
     });
     return <tbody>{rows}</tbody>;
-
 }
 
 export default ReviewView;

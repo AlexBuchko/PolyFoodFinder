@@ -5,9 +5,9 @@ const restaurantServices = require("../model/restaurant-services");
 
 let dbConnection;
 
-function setConnection(newConn){
-  dbConnection = newConn;
-  return dbConnection;
+function setConnection(newConn) {
+    dbConnection = newConn;
+    return dbConnection;
 }
 
 function getDbConnection() {
@@ -87,19 +87,22 @@ async function incrementFoodRating(id, rating) {
     const foodsModel = getDbConnection().model("foods", foodSchema);
     try {
         if (rating == "likes") {
-            return await foodsModel.findByIdAndUpdate(id, 
-                {$inc: { likes: +1 }},
-                {new: true},
+            return await foodsModel.findByIdAndUpdate(
+                id,
+                { $inc: { likes: +1 } },
+                { new: true }
             );
         } else if (rating == "dislikes") {
-            return await foodsModel.findByIdAndUpdate(id,
-                {$inc: { dislikes: +1 }},
-                {new: true},
+            return await foodsModel.findByIdAndUpdate(
+                id,
+                { $inc: { dislikes: +1 } },
+                { new: true }
             );
         } else if (rating == "poisonings") {
-            return await foodsModel.findByIdAndUpdate(id,
-                {$inc: { poisonings: +1 }},
-                {new: true},
+            return await foodsModel.findByIdAndUpdate(
+                id,
+                { $inc: { poisonings: +1 } },
+                { new: true }
             );
         }
     } catch (error) {
@@ -128,11 +131,10 @@ async function getReviews(id) {
     const reviewsModel = getDbConnection().model("reviews", reviewSchema);
     try {
         return await reviewsModel.find({ food_id: id });
-    } catch(error) {
+    } catch (error) {
         console.log(error);
         return undefined;
     }
-    
 }
 
 exports.incrementFoodRating = incrementFoodRating;

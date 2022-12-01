@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./reviews.css";
 import axios from "axios";
@@ -12,8 +12,7 @@ export default function Reviews(props) {
     const [rFlag, setRFlag] = useState("False");
     const [reviews, setReviews] = useState({});
     const params = useParams();
-    const  id  = params.id;
-    
+    const id = params.id;
 
     useEffect(() => {
         getReviewsById().then((result) => {
@@ -21,16 +20,19 @@ export default function Reviews(props) {
                 setReviews(result.data);
             }
         });
-    /* eslint-disable */
+        /* eslint-disable */
     }, []);
     /* eslint-enable */
 
     const handleClick = async (type) => {
         //check for spam protection - dont allow an action to go through on a button that has already been clicked.
-        if((type === "likes" && lFlag === "True") || (type === "dislikes" && dFlag === "True") || (type === "poisonings" && pFlag === "True")){
+        if (
+            (type === "likes" && lFlag === "True") ||
+            (type === "dislikes" && dFlag === "True") ||
+            (type === "poisonings" && pFlag === "True")
+        ) {
             alert("Cannot Add Aother Review");
-        }
-        else{
+        } else {
             try {
                 const response = await axios.put(
                     `http://localhost:4000/foods/${food._id}/${type}`
@@ -40,25 +42,23 @@ export default function Reviews(props) {
                     const newVal = food[type] + 1;
 
                     if (type === "likes") {
-                        if(dFlag === "False"){
+                        if (dFlag === "False") {
                             setLFlag("True");
                             setFood({
                                 ...food,
                                 likes: newVal,
                             });
-                        }
-                        else{
+                        } else {
                             alert("Cannot like and dislike the same item.");
-                        }    
+                        }
                     } else if (type === "dislikes") {
-                        if(lFlag === "False"){
+                        if (lFlag === "False") {
                             setDFlag("True");
                             setFood({
                                 ...food,
                                 dislikes: newVal,
                             });
-                        }
-                        else{
+                        } else {
                             alert("Cannot like and dislike the same item.");
                         }
                     } else {
@@ -73,13 +73,13 @@ export default function Reviews(props) {
                 //We're not handling errors. Just logging into the console.
                 console.error(error);
             }
-        }    
+        }
     };
 
     async function getReviewsById() {
         try {
             const response = await axios.get(
-                `http://localhost:4000/foods/${id}/reviews`,
+                `http://localhost:4000/foods/${id}/reviews`
             );
             setReviews(reviews);
             return response;
@@ -92,10 +92,9 @@ export default function Reviews(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if(rFlag === "True"){
+        if (rFlag === "True") {
             alert("Cannot Add Another Review");
-        }
-        else {
+        } else {
             const review = document.getElementById("reviewInputField").value;
             setRFlag("True");
             console.log("sending reivew", review);
@@ -104,15 +103,14 @@ export default function Reviews(props) {
                     `http://localhost:4000/foods/${food._id}/reviews`,
                     { review }
                 );
-            //updating local state
-            const temp = reviews.reviews
-            temp.push({review: review});
-            setReviews({reviews: temp});
+                //updating local state
+                const temp = reviews.reviews;
+                temp.push({ review: review });
+                setReviews({ reviews: temp });
             } catch (error) {
                 console.log(error);
             }
         }
-
     };
 
     const getReviewsMessage = (food) => {
@@ -171,11 +169,7 @@ export default function Reviews(props) {
                 <h5>
                     <label className="review-header">Leave a review</label>
                 </h5>
-                <textarea
-                    id="reviewInputField"
-                    rows="4"
-                    cols="50"
-                ></textarea>
+                <textarea id="reviewInputField" rows="4" cols="50"></textarea>
                 <br />
                 <input
                     type="submit"

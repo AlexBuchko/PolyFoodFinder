@@ -1,1 +1,6 @@
-nul not found
+coverage
+.github
+frontend/public
+*.json
+*.md
+.prettierrc

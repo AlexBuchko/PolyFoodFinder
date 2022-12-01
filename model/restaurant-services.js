@@ -3,10 +3,10 @@ const restaurantSchema = require("./restaurant");
 
 let dbConnection;
 
-function setConnection(newConn){
+function setConnection(newConn) {
     dbConnection = newConn;
     return dbConnection;
-  }
+}
 
 function getDbConnection() {
     if (!dbConnection) {

@@ -3,7 +3,7 @@ import React from "react";
 function ReviewDisplay(props) {
     const reviews = props.reviews.reviews;
     //const revs = data.foodsData;
-    if(reviews === undefined){
+    if (reviews === undefined) {
         return <tr> No Reviews Exist For This Item</tr>;
     }
     if (Object.keys(reviews).length === 0) {

@@ -51,7 +51,7 @@ function Table(props) {
                 <TableHeader />
                 <TableBody foodsData={props.foodsData} />
             </table>
-        </div>    
+        </div>
     );
 }
 

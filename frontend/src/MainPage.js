@@ -40,7 +40,7 @@ function MainPage() {
 
     return (
         <div width="100%" height="100%">
-            <img src={PolyBitesHeader} alt="" width="100%px" height="15%"/>
+            <img src={PolyBitesHeader} alt="" width="100%px" height="15%" />
             <div className="container">
                 <h1 align="center">Welcome To PolyBites</h1>
                 <div className="tableDiv" width="100%">
@@ -55,7 +55,10 @@ function MainPage() {
                             <tr>
                                 <td> </td>
                                 <td width="33%">
-                                    <select id="dietRestriction" onChange={getData}>
+                                    <select
+                                        id="dietRestriction"
+                                        onChange={getData}
+                                    >
                                         <option> None </option>
                                         <option> Vegetarian </option>
                                         <option> Vegan </option>

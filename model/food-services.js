@@ -32,7 +32,7 @@ async function getFoodsByFilters(diet, price, location) {
             searchParams.push({ vegetarian: true });
         }
         if (price === "$20+") {
-            searchParams.push({ price: { $gt: 20 } });
+            searchParams.push({ price: { $gte: 20 } });
         } else if (price === "Below $5") {
             searchParams.push({ price: { $lt: 5 } });
         } else if (price === "$5 - $10") {

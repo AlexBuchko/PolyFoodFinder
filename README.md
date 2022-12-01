@@ -31,3 +31,7 @@ npm install --save-dev --save-exact prettier
 ## Code Coverage Report
 <img width="599" alt="Screen Shot 2022-11-30 at 3 58 01 PM" src="https://user-images.githubusercontent.com/63268343/204933458-4fb894f6-7e81-48c6-9e80-dc36d981fa35.png">
 ! lines 15 and 13 are db connection lines
+
+#Sequence Diagram
+![image](https://user-images.githubusercontent.com/114194038/205140939-059c79f3-c303-4edb-a9c3-f7dc2b1e0fc1.png)
+

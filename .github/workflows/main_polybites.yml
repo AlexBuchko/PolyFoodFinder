@@ -9,10 +9,6 @@ on:
       - main
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: backend
-
 jobs:
   build:
     runs-on: windows-latest
@@ -30,6 +26,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+        working-directory: backend
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -57,4 +54,4 @@ jobs:
           app-name: 'polybites'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_754F2C83056A4E6995890C8A09716CE3 }}
-          package: .
+          package: backend

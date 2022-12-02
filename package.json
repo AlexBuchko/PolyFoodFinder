@@ -13,6 +13,6 @@
         "prettier": "2.7.1"
     },
     "scripts": {
-        "test": "prettier --check . && jest"
+        "test": "jest"
     }
 }

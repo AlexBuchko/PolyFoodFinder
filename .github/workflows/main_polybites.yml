@@ -26,7 +26,6 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        working-directory: .
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,5 +52,5 @@ jobs:
         with:
           app-name: 'polybites'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_754F2C83056A4E6995890C8A09716CE3 }}
-          package: backend
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B407C9A463844C45B5478F18B964892B }}
+          package: .

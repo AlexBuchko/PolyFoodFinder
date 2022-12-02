@@ -1,3 +1,8 @@
+# Links to Project Boards
+Since we changed ownership of the repo to try to set up CI/CD, the links to the project boards don't work
+https://github.com/users/AlexBuchko/projects/1
+https://github.com/users/AlexBuchko/projects/3
+https://github.com/users/AlexBuchko/projects/4
 # PolyBites
 
 PolyBites is a student-created web application to help students navigate through Cal Poly's dining options. Whether students are restricted by their dietary needs, location, or budget, PolyBites is able to help them filter down the available options and find what suits their needs best. They are also able to view the nutritional information of foods and leave reviews and ratings for future guests, as well as a food poisoning warning. Cal Poly students help each other- learn by EATING.
@@ -35,3 +40,4 @@ npm install --save-dev --save-exact prettier
 ## Sequence Diagram
 ![image](https://user-images.githubusercontent.com/114194038/205140939-059c79f3-c303-4edb-a9c3-f7dc2b1e0fc1.png)
 
+Just a heads up, we didn't get the CD working

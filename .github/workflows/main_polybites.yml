@@ -54,4 +54,4 @@ jobs:
           app-name: 'polybites'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_754F2C83056A4E6995890C8A09716CE3 }}
-          package: backend
+          package: .
